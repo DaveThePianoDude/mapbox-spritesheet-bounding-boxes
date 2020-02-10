@@ -11,6 +11,9 @@ import sys
 # we can increase the recursion limit
 # to satisfy our needs
 
+# font
+font = cv2.FONT_HERSHEY_SIMPLEX
+
 sys.setrecursionlimit(10**6)
 
 objectsFound = []
@@ -81,8 +84,8 @@ while (len(objectsFound) > 0):
     thing = objectsFound.pop()
     xLeft=width
     xRight=0
-    yBottom=height
-    yTop=0
+    yBottom=0
+    yTop=height
     # Obtain bounding box for each set of organically-grown point clusters.
     for p in thing.stack:
         img[p.y,p.x] = [100,0,255]
@@ -90,12 +93,28 @@ while (len(objectsFound) > 0):
             xRight=p.x
         if p.x < xLeft:
             xLeft=p.x
-        if p.y > yTop:
+        if p.y < yTop:
             yTop=p.y
-        if p.y < yBottom:
+        if p.y > yBottom:
             yBottom=p.y
-    boundingBox = Icon(xLeft-1, yTop+1, (xRight-xLeft)+2, (yBottom-yTop)-2)
+    boundingBox = Icon(xLeft-1, yTop-1, (xRight-xLeft)+2, (yBottom-yTop)+2)
     cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 0, 0), 1)
+    # org
+    org = (boundingBox.x-10,boundingBox.y+5)
+
+    # fontScale
+    fontScale = .5
+
+    # Blue color in BGR
+    color = (20, 20, 20)
+
+    # Line thickness of 2 px
+    thickness = 1
+
+    # Using cv2.putText() method
+    img = cv2.putText(img, str(len(objectsFound)), org, font,
+                       fontScale, color, thickness, cv2.LINE_AA)
+
     boundingBoxes.append(boundingBox)
 
 print("# of bounding boxes found: " + str(len(boundingBoxes)))
