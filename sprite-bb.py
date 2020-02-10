@@ -80,6 +80,8 @@ for y in range(height-2):
         scan(icon,x,y)
         objectsFound.append(icon)
 
+file = open("output.txt","w")
+
 while (len(objectsFound) > 0):
     thing = objectsFound.pop()
     xLeft=width
@@ -111,11 +113,23 @@ while (len(objectsFound) > 0):
     # Line thickness of 2 px
     thickness = 1
 
+    name = str(len(objectsFound))
+
     # Using cv2.putText() method
-    img = cv2.putText(img, str(len(objectsFound)), org, font,
+    img = cv2.putText(img, name, org, font,
                        fontScale, color, thickness, cv2.LINE_AA)
 
     boundingBoxes.append(boundingBox)
+
+    file.write("\""+"icon-"+name+"\": {\n")
+    file.write("\t\"x\": "+str(boundingBox.x)+",\n")
+    file.write("\t\"y\": "+str(boundingBox.y)+",\n")
+    file.write("\t\"width\": "+str(boundingBox.width)+",\n")
+    file.write("\t\"height\": "+str(boundingBox.height)+",\n")
+    file.write("\t\"pixelRatio\": 1\n")
+    file.write("},\n")
+
+file.close()
 
 print("# of bounding boxes found: " + str(len(boundingBoxes)))
 
