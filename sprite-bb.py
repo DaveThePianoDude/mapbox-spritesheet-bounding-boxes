@@ -14,6 +14,7 @@ import sys
 sys.setrecursionlimit(10**6)
 
 objectsFound = []
+boundingBoxes = []
 
 class Point:
     def __init__(self, x, y):
@@ -55,7 +56,7 @@ def scan(icon,x,y):
 # Save image in set directory
 # Read RGB image
 
-img = cv2.imread('20200130_074008.png')
+img = cv2.imread('TLM_MINI_MISC_CULT.png')
 
 height, width = img.shape[:2]
 
@@ -77,18 +78,31 @@ for y in range(height-2):
         objectsFound.append(icon)
         #print("x=" + str(x) + ",y=" + str(y) + ", len=" + str(len(icon.stack)))
 
-print(len(objectsFound))
+#print(len(objectsFound))
 
-objectsFound.pop()
-thing = objectsFound.pop()
-print(len(thing.stack))
+while (len(objectsFound) > 0):
+    thing = objectsFound.pop()
+    xLeft=width
+    xRight=0
+    yBottom=height
+    yTop=0
+    # Obtain bounding box for each set of organically-grown point clusters.
+    for p in thing.stack:
+        img[p.y,p.x] = [100,0,255]
+        if p.x > xRight:
+            xRight=p.x
+        if p.x < xLeft:
+            xLeft=p.x
+        if p.y > yTop:
+            yTop=p.y
+        if p.y < yBottom:
+            yBottom=p.y
+    boundingBox = Icon(xLeft-2, yTop-2, xRight-xLeft+4, yBottom-yTop+4)
+    boundingBoxes.append(boundingBox)
 
-for p in thing.stack:
-    print(str(p.x))
-    print(str(p.y))
-    img[p.y,p.x] = [100,0,255]
+print("# of bounding boxes found: " + str(len(boundingBoxes)))
 
-scale_percent = 50 # percent of original size
+scale_percent = 80 # percent of original size
 width = int(img.shape[1] * scale_percent / 100)
 height = int(img.shape[0] * scale_percent / 100)
 dim = (width, height)
@@ -97,11 +111,6 @@ resized = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
 
 # Output img with window name as 'image'
 cv2.imshow('image', resized)
-
-print(scannedPixelCount)
-
-# Maintain output window utill
-# user presses a key
 cv2.waitKey(0)
 
 # Destroying present windows on screen
