@@ -76,9 +76,6 @@ for y in range(height-2):
         icon = Icon(x,y,0,0)
         scan(icon,x,y)
         objectsFound.append(icon)
-        #print("x=" + str(x) + ",y=" + str(y) + ", len=" + str(len(icon.stack)))
-
-#print(len(objectsFound))
 
 while (len(objectsFound) > 0):
     thing = objectsFound.pop()
@@ -97,12 +94,13 @@ while (len(objectsFound) > 0):
             yTop=p.y
         if p.y < yBottom:
             yBottom=p.y
-    boundingBox = Icon(xLeft-2, yTop-2, xRight-xLeft+4, yBottom-yTop+4)
+    boundingBox = Icon(xLeft-1, yTop+1, (xRight-xLeft)+2, (yBottom-yTop)-2)
+    cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 0, 0), 1)
     boundingBoxes.append(boundingBox)
 
 print("# of bounding boxes found: " + str(len(boundingBoxes)))
 
-scale_percent = 80 # percent of original size
+scale_percent = 150 # percent of original size
 width = int(img.shape[1] * scale_percent / 100)
 height = int(img.shape[0] * scale_percent / 100)
 dim = (width, height)
