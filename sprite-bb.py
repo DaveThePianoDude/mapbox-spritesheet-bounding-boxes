@@ -81,6 +81,7 @@ for y in range(height-2):
         objectsFound.append(icon)
 
 file = open("output.txt","w")
+file.write("{\n")
 
 while (len(objectsFound) > 0):
     thing = objectsFound.pop()
@@ -127,8 +128,12 @@ while (len(objectsFound) > 0):
     file.write("\t\"width\": "+str(boundingBox.width)+",\n")
     file.write("\t\"height\": "+str(boundingBox.height)+",\n")
     file.write("\t\"pixelRatio\": 1\n")
-    file.write("},\n")
+    if (len(objectsFound)==0):
+        file.write("}\n")
+    else:
+        file.write("},\n")
 
+file.write("}\n")
 file.close()
 
 print("# of bounding boxes found: " + str(len(boundingBoxes)))
