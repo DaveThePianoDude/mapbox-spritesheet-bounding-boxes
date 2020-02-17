@@ -78,12 +78,40 @@ def contains(A, B):
 
 #returns true if some box A in boundingBoxes contains box B
 def containsAny(A):
+    index=0
     for B in boundingBoxes:
         if (contains(A, B)):
             boundingBoxes.remove(B)
-            boundingBoxes.insert(0,A)
+            boundingBoxes.insert(index,A)
             return True
+        index +=1
     return False
+
+def convertClusters(height, width):
+    # convert the objects (clusters of points) found into bounding boxes
+    while (len(objectsFound) > 0):
+        thing = objectsFound.pop()
+        xLeft=width
+        xRight=0
+        yBottom=0
+        yTop=height
+
+        # Obtain bounding box for each set of organically-grown point clusters.
+        for p in thing.stack:
+            img[p.y,p.x] = [100,0,255]
+            if p.x > xRight:
+                xRight=p.x
+            if p.x < xLeft:
+                xLeft=p.x
+            if p.y < yTop:
+                yTop=p.y
+            if p.y > yBottom:
+                yBottom=p.y
+
+        boundingBox = Icon(xLeft-1, yTop-1, (xRight-xLeft)+2, (yBottom-yTop)+2)
+        print(boundingBox)
+        if (not containsAny(boundingBox)):
+            boundingBoxes.append(boundingBox)
 
 # Save image in set directory
 # Read RGB image
@@ -109,6 +137,7 @@ def main():
         scanned = matrix.zeros([width,height], dtype = int)
 
         growClusters(height, width)
+        convertClusters(height, width)
 
         # convert the objects (clusters of points) found into bounding boxes
         while (len(objectsFound) > 0):
@@ -154,7 +183,7 @@ def main():
             name = str(len(boundingBoxes))
 
             # Using cv2.putText() method
-            img = cv2.putText(img, name, org, font, fontScale, color, thickness, cv2.LINE_AA)
+            #img = cv2.putText(img, name, org, font, fontScale, color, thickness, cv2.LINE_AA)
 
             file.write("\""+"icon-"+name+"\": {\n")
             file.write("\t\"x\": "+str(boundingBox.x)+",\n")
