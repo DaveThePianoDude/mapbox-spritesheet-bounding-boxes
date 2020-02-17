@@ -12,9 +12,8 @@ import argparse
 # we can increase the recursion limit
 # to satisfy our needs
 
-# font
+rgb = (225,225,225)
 font = cv2.FONT_HERSHEY_SIMPLEX
-
 sys.setrecursionlimit(10**6)
 
 objectsFound = []
@@ -41,32 +40,32 @@ class Icon:
         return "<Icon x:%s y:%s w:%s h:%s>" % (self.x, self.y, self.width, self.height)
 
 #returns true if the pixel at (x,y) is black.
-def interrogate(x,y):
+def interrogate(x,y,color):
     _blue = img[y,x,0]
     _green = img[y,x,1]
     _red = img[y,x,2]
     #if this is a relatively black pixel
-    return (_red < 225 and _green < 225 and _blue < 225 and scanned[x,y] < 1)
+    return (_red < color[0] and _green < color[1] and _blue < color[2] and scanned[x,y] < 1)
 
-def scan(icon,x,y):
+def scan(icon,x,y,color):
     icon.stack.append(Point(x,y))
     scanned[x,y] = 1
-    if (x>0 and scanned[x-1,y]<1 and interrogate(x-1,y)):
-        scan(icon,x-1,y)
-    if (y>0 and scanned[x,y-1]<1 and interrogate(x,y-1)):
-        scan(icon,x,y-1)
-    if (x<width and scanned[x+1,y]<1 and interrogate(x+1,y)):
-        scan(icon,x+1,y)
-    if (y<height and scanned[x,y+1]<1 and interrogate(x,y+1)):
-        scan(icon,x,y+1)
+    if (x>0 and scanned[x-1,y]<1 and interrogate(x-1,y,color)):
+        scan(icon,x-1,y,color)
+    if (y>0 and scanned[x,y-1]<1 and interrogate(x,y-1,color)):
+        scan(icon,x,y-1,color)
+    if (x<width and scanned[x+1,y]<1 and interrogate(x+1,y,color)):
+        scan(icon,x+1,y,color)
+    if (y<height and scanned[x,y+1]<1 and interrogate(x,y+1,color)):
+        scan(icon,x,y+1,color)
 
-def growClusters(height, width):
+def growClusters(height, width, color):
     for y in range(height-2):
        for x in range(width-2):
-           if interrogate(x,y):
+           if interrogate(x,y,color):
             img[y,x] = [100, 0, 255]
             icon = Icon(x,y,0,0)
-            scan(icon,x,y)
+            scan(icon,x,y,color)
             objectsFound.append(icon)
 
 #returns true if A completely contains B
@@ -76,7 +75,7 @@ def contains(A, B):
     else:
         return False
 
-#returns true if some box A in boundingBoxes contains box B
+#returns true if some box A in boundingBoxes contains another box B
 def containsAny(A):
     index=0
     for B in boundingBoxes:
@@ -136,7 +135,7 @@ def main():
         global scanned
         scanned = matrix.zeros([width,height], dtype = int)
 
-        growClusters(height, width)
+        growClusters(height, width, rgb)
         convertClusters(height, width)
 
         # convert the objects (clusters of points) found into bounding boxes
