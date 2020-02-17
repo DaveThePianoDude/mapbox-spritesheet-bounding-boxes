@@ -4,6 +4,7 @@
 import cv2
 import numpy as matrix
 import sys
+import argparse
 
 # the setrecursionlimit function is
 # used to modify the default recursion
@@ -59,95 +60,110 @@ def scan(icon,x,y):
 # Save image in set directory
 # Read RGB image
 
-img = cv2.imread('TLM_MINI_MISC_CULT.png')
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('inputFile')
+    parser.add_argument('outputFile', nargs = '?')
+    args = parser.parse_args()
 
-height, width = img.shape[:2]
-
-print ('width='+str(width))
-print ('height='+str(height))
-
-scannedPixelCount = 0
-scanned = matrix.zeros([width,height], dtype = int)
-
-print ('initialized numpy array')
-
-for y in range(height-2):
-   for x in range(width-2):
-       if interrogate(x,y):
-        img[y,x] = [100, 0, 255]
-        scannedPixelCount+=1
-        icon = Icon(x,y,0,0)
-        scan(icon,x,y)
-        objectsFound.append(icon)
-
-file = open("output.txt","w")
-file.write("{\n")
-
-while (len(objectsFound) > 0):
-    thing = objectsFound.pop()
-    xLeft=width
-    xRight=0
-    yBottom=0
-    yTop=height
-    # Obtain bounding box for each set of organically-grown point clusters.
-    for p in thing.stack:
-        img[p.y,p.x] = [100,0,255]
-        if p.x > xRight:
-            xRight=p.x
-        if p.x < xLeft:
-            xLeft=p.x
-        if p.y < yTop:
-            yTop=p.y
-        if p.y > yBottom:
-            yBottom=p.y
-    boundingBox = Icon(xLeft-1, yTop-1, (xRight-xLeft)+2, (yBottom-yTop)+2)
-    cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 0, 0), 1)
-    # org
-    org = (boundingBox.x-10,boundingBox.y+5)
-
-    # fontScale
-    fontScale = .5
-
-    # Blue color in BGR
-    color = (20, 20, 20)
-
-    # Line thickness of 2 px
-    thickness = 1
-
-    name = str(len(objectsFound))
-
-    # Using cv2.putText() method
-    img = cv2.putText(img, name, org, font,
-                       fontScale, color, thickness, cv2.LINE_AA)
-
-    boundingBoxes.append(boundingBox)
-
-    file.write("\""+"icon-"+name+"\": {\n")
-    file.write("\t\"x\": "+str(boundingBox.x)+",\n")
-    file.write("\t\"y\": "+str(boundingBox.y)+",\n")
-    file.write("\t\"width\": "+str(boundingBox.width)+",\n")
-    file.write("\t\"height\": "+str(boundingBox.height)+",\n")
-    file.write("\t\"pixelRatio\": 1\n")
-    if (len(objectsFound)==0):
-        file.write("}\n")
+    if args.inputFile == None or args.outputFile == None:
+        print("Usage: ./sprite-bb.py <inputFile> <outputFile>")
     else:
-        file.write("},\n")
+        global img
+        img = cv2.imread(args.inputFile)
 
-file.write("}\n")
-file.close()
+        global height, width
+        height, width = img.shape[:2]
 
-print("# of bounding boxes found: " + str(len(boundingBoxes)))
+        print ('width='+str(width))
+        print ('height='+str(height))
 
-scale_percent = 150 # percent of original size
-width = int(img.shape[1] * scale_percent / 100)
-height = int(img.shape[0] * scale_percent / 100)
-dim = (width, height)
-# resize image
-resized = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
+        scannedPixelCount = 0
+        global scanned
+        scanned = matrix.zeros([width,height], dtype = int)
 
-# Output img with window name as 'image'
-cv2.imshow('image', resized)
-cv2.waitKey(0)
+        print ('initialized numpy array')
 
-# Destroying present windows on screen
-cv2.destroyAllWindows()
+        for y in range(height-2):
+           for x in range(width-2):
+               if interrogate(x,y):
+                img[y,x] = [100, 0, 255]
+                scannedPixelCount+=1
+                icon = Icon(x,y,0,0)
+                scan(icon,x,y)
+                objectsFound.append(icon)
+
+        file = open(args.outputFile,"w")
+        file.write("{\n")
+
+        while (len(objectsFound) > 0):
+            thing = objectsFound.pop()
+            xLeft=width
+            xRight=0
+            yBottom=0
+            yTop=height
+            # Obtain bounding box for each set of organically-grown point clusters.
+            for p in thing.stack:
+                img[p.y,p.x] = [100,0,255]
+                if p.x > xRight:
+                    xRight=p.x
+                if p.x < xLeft:
+                    xLeft=p.x
+                if p.y < yTop:
+                    yTop=p.y
+                if p.y > yBottom:
+                    yBottom=p.y
+            boundingBox = Icon(xLeft-1, yTop-1, (xRight-xLeft)+2, (yBottom-yTop)+2)
+            cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 0, 0), 1)
+            # org
+            org = (boundingBox.x-10,boundingBox.y+5)
+
+            # fontScale
+            fontScale = .5
+
+            # Blue color in BGR
+            color = (20, 20, 20)
+
+            # Line thickness of 2 px
+            thickness = 1
+
+            name = str(len(objectsFound))
+
+            # Using cv2.putText() method
+            img = cv2.putText(img, name, org, font,
+                               fontScale, color, thickness, cv2.LINE_AA)
+
+            boundingBoxes.append(boundingBox)
+
+            file.write("\""+"icon-"+name+"\": {\n")
+            file.write("\t\"x\": "+str(boundingBox.x)+",\n")
+            file.write("\t\"y\": "+str(boundingBox.y)+",\n")
+            file.write("\t\"width\": "+str(boundingBox.width)+",\n")
+            file.write("\t\"height\": "+str(boundingBox.height)+",\n")
+            file.write("\t\"pixelRatio\": 1\n")
+            if (len(objectsFound)==0):
+                file.write("}\n")
+            else:
+                file.write("},\n")
+
+        file.write("}\n")
+        file.close()
+
+        print("# of bounding boxes found: " + str(len(boundingBoxes)))
+
+        scale_percent = 150 # percent of original size
+        width = int(img.shape[1] * scale_percent / 100)
+        height = int(img.shape[0] * scale_percent / 100)
+        dim = (width, height)
+        # resize image
+        resized = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
+
+        # Output img with window name as 'image'
+        cv2.imshow('image', resized)
+        cv2.waitKey(0)
+
+        # Destroying present windows on screen
+        cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    main()
