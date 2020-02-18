@@ -12,7 +12,7 @@ import argparse
 # we can increase the recursion limit
 # to satisfy our needs
 
-rgb = (225,225,225)
+bgr = (255,0,0)
 font = cv2.FONT_HERSHEY_SIMPLEX
 sys.setrecursionlimit(10**6)
 
@@ -45,7 +45,7 @@ def interrogate(x,y,color):
     _green = img[y,x,1]
     _red = img[y,x,2]
     #if this is a relatively black pixel
-    return (_red < color[2] and _green < color[1] and _blue < color[0] and scanned[x,y] < 1)
+    return (_red == color[2] and _green == color[1] and _blue == color[0] and scanned[x,y] < 1)
 
 def scan(icon,x,y,color):
     icon.stack.append(Point(x,y))
@@ -113,7 +113,7 @@ def convertClusters(height, width):
             boundingBoxes.append(boundingBox)
 
 # Save image in set directory
-# Read RGB image
+# Read bgr image
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('inputFile')
@@ -135,7 +135,7 @@ def main():
         global scanned
         scanned = matrix.zeros([width,height], dtype = int)
 
-        growClusters(height, width, rgb)
+        growClusters(height, width, bgr)
         convertClusters(height, width)
 
         # convert the objects (clusters of points) found into bounding boxes
@@ -172,17 +172,17 @@ def main():
         while(len(boundingBoxes) > 0):
             boundingBox = boundingBoxes.pop()
 
-            cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 0, 0), 1)
+            cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 255, 0), 1)
 
             org = (boundingBox.x-10,boundingBox.y+5)
-            fontScale = .5
+            fontScale = .4
             color = (20, 20, 20)
             thickness = 1
 
             name = str(len(boundingBoxes))
 
             # Using cv2.putText() method
-            #img = cv2.putText(img, name, org, font, fontScale, color, thickness, cv2.LINE_AA)
+            img = cv2.putText(img, name, org, font, fontScale, color, thickness, cv2.LINE_AA)
 
             file.write("\""+"icon-"+name+"\": {\n")
             file.write("\t\"x\": "+str(boundingBox.x)+",\n")
@@ -201,7 +201,7 @@ def main():
 
         cv2.imwrite("v-blue-"+args.inputFile, img)
 
-        scale_percent = 200 # percent of original size
+        scale_percent = 150 # percent of original size
         width = int(img.shape[1] * scale_percent / 100)
         height = int(img.shape[0] * scale_percent / 100)
         dim = (width, height)
