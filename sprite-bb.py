@@ -12,7 +12,10 @@ import argparse
 # we can increase the recursion limit
 # to satisfy our needs
 
+# Step 1: Set the color that controls the interrogate function.
+#bgr = (255,225,225)
 bgr = (255,0,0)
+
 font = cv2.FONT_HERSHEY_SIMPLEX
 sys.setrecursionlimit(10**6)
 
@@ -44,8 +47,12 @@ def interrogate(x,y,color):
     _blue = img[y,x,0]
     _green = img[y,x,1]
     _red = img[y,x,2]
+
+    # Step 2: Set the interrogate functionself.
+
     #if this is a relatively black pixel
-    return (_red == color[2] and _green == color[1] and _blue == color[0] and scanned[x,y] < 1)
+    #return (_red < color[2] and _green < color[1] and _blue < color[0] and scanned[x,y] < 1)
+    return (_red == 0 and _green == 0 and _blue == 255 and scanned[x,y] < 1)
 
 def scan(icon,x,y,color):
     icon.stack.append(Point(x,y))
@@ -172,6 +179,10 @@ def main():
         while(len(boundingBoxes) > 0):
             boundingBox = boundingBoxes.pop()
 
+            #Step 3: Set the bounding box color, per iteration.
+
+            #cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 0, 0), 1)
+
             cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 255, 0), 1)
 
             org = (boundingBox.x-10,boundingBox.y+5)
@@ -181,7 +192,7 @@ def main():
 
             name = str(len(boundingBoxes))
 
-            # Using cv2.putText() method
+            # Step 4: Render text only after second iteration.
             img = cv2.putText(img, name, org, font, fontScale, color, thickness, cv2.LINE_AA)
 
             file.write("\""+"icon-"+name+"\": {\n")
