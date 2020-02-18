@@ -45,7 +45,7 @@ def interrogate(x,y,color):
     _green = img[y,x,1]
     _red = img[y,x,2]
     #if this is a relatively black pixel
-    return (_red < color[0] and _green < color[1] and _blue < color[2] and scanned[x,y] < 1)
+    return (_red < color[2] and _green < color[1] and _blue < color[0] and scanned[x,y] < 1)
 
 def scan(icon,x,y,color):
     icon.stack.append(Point(x,y))
@@ -199,10 +199,13 @@ def main():
         file.write("}\n")
         file.close()
 
-        scale_percent = 250 # percent of original size
+        cv2.imwrite("v-blue-"+args.inputFile, img)
+
+        scale_percent = 200 # percent of original size
         width = int(img.shape[1] * scale_percent / 100)
         height = int(img.shape[0] * scale_percent / 100)
         dim = (width, height)
+
         # resize image
         resized = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
 
