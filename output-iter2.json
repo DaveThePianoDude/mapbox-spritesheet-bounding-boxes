@@ -1,110 +1,103 @@
 {
-"icon-80": {
+"prison-building": {
 	"x": 102,
 	"y": 24,
 	"width": 22,
 	"height": 24,
 	"pixelRatio": 1
-}
-"icon-79": {
+},
+"cross": {
 	"x": 209,
 	"y": 24,
 	"width": 15,
 	"height": 25,
 	"pixelRatio": 1
-}
-"icon-78": {
+},
+"crescent": {
 	"x": 247,
 	"y": 24,
 	"width": 17,
 	"height": 25,
 	"pixelRatio": 1
-}
-"icon-77": {
+},
+"star-david": {
 	"x": 293,
 	"y": 24,
 	"width": 12,
 	"height": 25,
 	"pixelRatio": 1
-}
-"icon-76": {
+},
+"police-building": {
 	"x": 32,
 	"y": 35,
 	"width": 13,
 	"height": 12,
 	"pixelRatio": 1
-}
-"icon-75": {
+},
+"mosque": {
 	"x": 111,
 	"y": 50,
 	"width": 13,
 	"height": 22,
 	"pixelRatio": 1
-}
-"icon-74": {
+},
+"church": {
 	"x": 72,
 	"y": 52,
 	"width": 12,
 	"height": 20,
 	"pixelRatio": 1
-}
-"icon-73": {
+},
+"synagogue": {
 	"x": 150,
 	"y": 52,
 	"width": 11,
 	"height": 20,
 	"pixelRatio": 1
-}
-"icon-72": {
+},
+"cemetery-unkown": {
 	"x": 204,
 	"y": 62,
 	"width": 24,
 	"height": 20,
 	"pixelRatio": 1
-}
-"icon-71": {
+},
+"cemetery-buddhist": {
 	"x": 285,
 	"y": 65,
 	"width": 25,
 	"height": 16,
 	"pixelRatio": 1
-}
-"icon-70": {
+},
+"cemetery-shinto": {
 	"x": 246,
 	"y": 66,
 	"width": 22,
 	"height": 13,
 	"pixelRatio": 1
-}
-"icon-69": {
+},
+"minaret": {
 	"x": 30,
 	"y": 74,
 	"width": 17,
 	"height": 29,
 	"pixelRatio": 1
-}
-"icon-68": {
+},
+"stupa": {
 	"x": 108,
 	"y": 79,
 	"width": 19,
 	"height": 22,
 	"pixelRatio": 1
-}
-"icon-67": {
+},
+"pagoda": {
 	"x": 72,
 	"y": 80,
 	"width": 16,
 	"height": 21,
 	"pixelRatio": 1
-}
-"icon-66": {
-	"x": 214,
-	"y": 82,
-	"width": 4,
-	"height": 4,
-	"pixelRatio": 1
-}
-"icon-65": {
+},
+"temple": {
 	"x": 144,
 	"y": 83,
 	"width": 23,
