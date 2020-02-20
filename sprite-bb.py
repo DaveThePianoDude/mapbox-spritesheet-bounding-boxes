@@ -20,6 +20,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 sys.setrecursionlimit(10**6)
 
 objectsFound = []
+sortedObjectsFound = []
 boundingBoxes = []
 
 class Point:
@@ -41,6 +42,17 @@ class Icon:
 
     def __repr__(self):
         return "<Icon x:%s y:%s w:%s h:%s>" % (self.x, self.y, self.width, self.height)
+
+    def getTier(self):
+        if (self.y < 55):
+            return 0
+        if (self.y >= 55 and self.y <= 110):
+            return 1
+        if (self.y > 110):
+            return 2
+
+    def getRank(self):
+        return self.x + (2000 * self.getTier())
 
 #returns true if the pixel at (x,y) is black.
 def interrogate(x,y,color):
@@ -74,6 +86,7 @@ def growClusters(height, width, color):
             icon = Icon(x,y,0,0)
             scan(icon,x,y,color)
             objectsFound.append(icon)
+            print(icon.getRank())
 
 #returns true if A completely contains B
 def contains(A, B):
@@ -95,8 +108,8 @@ def containsAny(A):
 
 def convertClusters(height, width):
     # convert the objects (clusters of points) found into bounding boxes
-    while (len(objectsFound) > 0):
-        thing = objectsFound.pop()
+    while (len(sortedObjectsFound) > 0):
+        thing = sortedObjectsFound.pop()
         xLeft=width
         xRight=0
         yBottom=0
@@ -143,11 +156,12 @@ def main():
         scanned = matrix.zeros([width,height], dtype = int)
 
         growClusters(height, width, bgr)
+        sortedObjectsFound = sorted(objectsFound,key=Icon.getRank)
         convertClusters(height, width)
 
         # convert the objects (clusters of points) found into bounding boxes
-        while (len(objectsFound) > 0):
-            thing = objectsFound.pop()
+        while (len(sortedObjectsFound) > 0):
+            thing = sortedObjectsFound.pop()
             xLeft=width
             xRight=0
             yBottom=0
@@ -176,6 +190,8 @@ def main():
 
         print("# of bounding boxes remaining: " + str(len(boundingBoxes)))
 
+        totalLen = len(boundingBoxes)
+
         while(len(boundingBoxes) > 0):
             boundingBox = boundingBoxes.pop()
 
@@ -190,7 +206,7 @@ def main():
             color = (20, 20, 20)
             thickness = 1
 
-            name = str(len(boundingBoxes))
+            name = str(totalLen - len(boundingBoxes))
 
             # Step 4: Render text only after second iteration.
             img = cv2.putText(img, name, org, font, fontScale, color, thickness, cv2.LINE_AA)
@@ -202,7 +218,7 @@ def main():
             file.write("\t\"height\": "+str(boundingBox.height)+",\n")
             file.write("\t\"pixelRatio\": 1\n")
 
-            if (len(objectsFound)==0):
+            if (len(sortedObjectsFound)==0):
                 file.write("}\n")
             else:
                 file.write("},\n")
