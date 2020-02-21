@@ -53,7 +53,7 @@ surface-bunker,52,x,
 underground-bunker,53,x,
 extraction-mine-intact,54,x,
 extraction-mine-not-intact,55,x,
-unesco-world-heritage-site,56,?,
+unesco-world-heritage-site,56,?,These will require their own data.  How will the symbol be placed?
 dam-hard,57,x,
 dam-loose,58,x,
 lock,59,x,
