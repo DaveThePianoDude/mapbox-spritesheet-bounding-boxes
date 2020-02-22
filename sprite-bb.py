@@ -48,7 +48,7 @@ class Icon:
             return 2
 
     def getRank(self):
-        return self.x + (2000 * self.getTier())
+        return self.x + (3000 * self.getTier())
 
 #returns true if the pixel at (x,y) is black.
 def interrogate(x,y,color):
@@ -215,7 +215,7 @@ def main():
             file.write("\t\"height\": "+str(boundingBox.height)+",\n")
             file.write("\t\"pixelRatio\": 1\n")
 
-            if (len(sortedObjectsFound)==0):
+            if (len(boundingBoxes)==0):
                 file.write("}\n")
             else:
                 file.write("},\n")
