@@ -12,10 +12,6 @@ import argparse
 # we can increase the recursion limit
 # to satisfy our needs
 
-# Step 1: Set the color that controls the interrogate function.
-bgr = (255,250,250)
-#bgr = (255,0,0)
-
 font = cv2.FONT_HERSHEY_SIMPLEX
 sys.setrecursionlimit(10**6)
 
@@ -60,11 +56,12 @@ def interrogate(x,y,color):
     _green = img[y,x,1]
     _red = img[y,x,2]
 
-    # Step 2: Set the interrogate functionself.
-
-    #if this is a relatively black pixel
-    return (_red < color[2] and _green < color[1] and _blue < color[0] and scanned[x,y] < 1)
-    #return (_red == 0 and _green == 0 and _blue == 255 and scanned[x,y] < 1)
+    # Step 2: Set the interrogate function, depending on if we are doing the initial organic clustering of icon points
+    # or the clustering of bounding boxes found during the first iteration.
+    if (iter == 1):
+        return (_red < color[2] and _green < color[1] and _blue < color[0] and scanned[x,y] < 1)
+    else:
+        return (_red == 0 and _green == 0 and _blue == 255 and scanned[x,y] < 1)
 
 def scan(icon,x,y,color):
     icon.stack.append(Point(x,y))
@@ -137,13 +134,22 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('inputFile')
     parser.add_argument('outputFile', nargs = '?')
+    parser.add_argument('iteration')
     args = parser.parse_args()
 
     if args.inputFile == None or args.outputFile == None:
-        print("Usage: ./sprite-bb.py <inputFile> <outputFile>")
+        print("Usage: ./sprite-bb.py <inputFile> <outputFile> <iteration# (1,2,etc)>")
     else:
-        global img
-        img = cv2.imread(args.inputFile)
+        global img, iter
+        iter = int(args.iteration)
+
+        # If this is iteration 2, grab the file pre-pended with 'v-blue-'
+        if (iter == 1):
+            print ("Performing iteration 1...")
+            img = cv2.imread(args.inputFile)
+        else:
+            print ("Performing iteration 2...")
+            img = cv2.imread("v-blue-"+args.inputFile)
 
         global height, width
         height, width = img.shape[:2]
@@ -153,6 +159,12 @@ def main():
 
         global scanned
         scanned = matrix.zeros([width,height], dtype = int)
+
+        # Step 1: Set the color that is used in the interrogate function.
+        if (iter == 1):
+            bgr = (255,250,250)
+        else:
+            bgr = (255,0,0)
 
         growClusters(height, width, bgr)
         sortedObjectsFound = sorted(objectsFound,key=Icon.getRank)
@@ -180,10 +192,10 @@ def main():
             boundingBox = boundingBoxes.pop()
 
             #Step 3: Set the bounding box color, per iteration.
-
-            cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 0, 0), 1)
-
-            #cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 255, 0), 1)
+            if (iter == 1):
+                cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 0, 0), 1)
+            else:
+                cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 255, 0), 1)
 
             org = (boundingBox.x-10,boundingBox.y+5)
             fontScale = .4
@@ -193,7 +205,8 @@ def main():
             name = str(totalLen - len(boundingBoxes))
 
             # Step 4: Render text only after second iteration.
-            #img = cv2.putText(img, name, org, font, fontScale, color, thickness, cv2.LINE_AA)
+            if (iter == 2):
+                img = cv2.putText(img, name, org, font, fontScale, color, thickness, cv2.LINE_AA)
 
             file.write("\""+"icon-"+name+"\": {\n")
             file.write("\t\"x\": "+str(boundingBox.x)+",\n")
