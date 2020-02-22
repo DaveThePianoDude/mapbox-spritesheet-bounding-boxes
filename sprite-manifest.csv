@@ -58,20 +58,20 @@ dam-hard,57,x,
 dam-loose,58,x,
 lock,59,x,
 sluice-gate,60,x,
-tunnel-entrance,61,?,Is this a square (AOO <= 90) or circular (AOO <= 360) feature? 
+tunnel-entrance,61,?,Is this a square (AOO <= 90) or circular (AOO <= 360) feature?
 tunnel-exit,62,?,Ditto.  This will impact whether we need two icons for this feature.
-bridge-pedestrian,64,x,
-bridge-road,65,x,
-bridge-railway,66,x,
-culvert-road,67,?,Is the CTC useful for differentiating between rail and road instances?
-culvert-railway,68,?,Is this a square (AOO <= 90) or circular (AOO <= 360) feature? 
-wall,74,x,
-fence,75,x,
-pipeline-surface-water,77,x,
-pipeline-surface-not-water,76,x,
-pipeline-underground-water,79,x,
-pipeline-underground-not-water,81,x,
-pipeline-elevated-water,83,x,
-pipeline-elevated-not-water,82,x,
-sports-ground,69,x,
-vehicle-lot,89,x,
+bridge-pedestrian,63,x,
+bridge-road,64,x,
+bridge-railway,65,x,
+culvert-road,66,?,Is the CTC useful for differentiating between rail and road instances?
+culvert-railway,67,?,Is this a square (AOO <= 90) or circular (AOO <= 360) feature?
+sports-ground,68,x,
+vehicle-lot,69,x,
+wall,70,x,
+fence,71,x,
+pipeline-surface-water,72,x,
+pipeline-surface-not-water,73,x,
+pipeline-underground-water,74,x,
+pipeline-underground-not-water,75,x,
+pipeline-elevated-water,76,x,
+pipeline-elevated-not-water,77,x,
