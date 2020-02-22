@@ -13,8 +13,8 @@ import argparse
 # to satisfy our needs
 
 # Step 1: Set the color that controls the interrogate function.
-#bgr = (255,250,250)
-bgr = (255,0,0)
+bgr = (255,250,250)
+#bgr = (255,0,0)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 sys.setrecursionlimit(10**6)
@@ -63,8 +63,8 @@ def interrogate(x,y,color):
     # Step 2: Set the interrogate functionself.
 
     #if this is a relatively black pixel
-    #return (_red < color[2] and _green < color[1] and _blue < color[0] and scanned[x,y] < 1)
-    return (_red == 0 and _green == 0 and _blue == 255 and scanned[x,y] < 1)
+    return (_red < color[2] and _green < color[1] and _blue < color[0] and scanned[x,y] < 1)
+    #return (_red == 0 and _green == 0 and _blue == 255 and scanned[x,y] < 1)
 
 def scan(icon,x,y,color):
     icon.stack.append(Point(x,y))
@@ -86,7 +86,7 @@ def growClusters(height, width, color):
             icon = Icon(x,y,0,0)
             scan(icon,x,y,color)
             objectsFound.append(icon)
-            print(icon.getRank())
+            #print(icon.getRank())
 
 #returns true if A completely contains B
 def contains(A, B):
@@ -106,8 +106,9 @@ def containsAny(A):
         index +=1
     return False
 
-def convertClusters(height, width):
-    # convert the objects (clusters of points) found into bounding boxes
+# convert the objects (clusters of points) found into bounding boxes
+def convertClusters(sortedObjectsFound,height, width):
+    print ("Found " + str(len(sortedObjectsFound)) + " bounding boxes.")
     while (len(sortedObjectsFound) > 0):
         thing = sortedObjectsFound.pop()
         xLeft=width
@@ -128,9 +129,7 @@ def convertClusters(height, width):
                 yBottom=p.y
 
         boundingBox = Icon(xLeft-1, yTop-1, (xRight-xLeft)+2, (yBottom-yTop)+2)
-        print(boundingBox)
-        if (not containsAny(boundingBox)):
-            boundingBoxes.append(boundingBox)
+        boundingBoxes.append(boundingBox)
 
 # Save image in set directory
 # Read bgr image
@@ -157,38 +156,23 @@ def main():
 
         growClusters(height, width, bgr)
         sortedObjectsFound = sorted(objectsFound,key=Icon.getRank)
-        convertClusters(height, width)
+        convertClusters(sortedObjectsFound,height, width)
 
-        # convert the objects (clusters of points) found into bounding boxes
-        while (len(sortedObjectsFound) > 0):
-            thing = sortedObjectsFound.pop()
-            xLeft=width
-            xRight=0
-            yBottom=0
-            yTop=height
+        foundContainedBox = True
 
-            # Obtain bounding box for each set of organically-grown point clusters.
-            for p in thing.stack:
-                img[p.y,p.x] = [100,0,255]
-                if p.x > xRight:
-                    xRight=p.x
-                if p.x < xLeft:
-                    xLeft=p.x
-                if p.y < yTop:
-                    yTop=p.y
-                if p.y > yBottom:
-                    yBottom=p.y
-
-            boundingBox = Icon(xLeft-1, yTop-1, (xRight-xLeft)+2, (yBottom-yTop)+2)
-            print(boundingBox)
-            if (not containsAny(boundingBox)):
-                boundingBoxes.append(boundingBox)
+        #improve the quality of the object detection by removing boxes contained in other boxes
+        while (foundContainedBox):
+            foundContainedBox = False
+            for boundingBox in boundingBoxes:
+                if (containsAny(boundingBox)):
+                    boundingBoxes.remove(boundingBox)
+                    foundContainedBox = True
 
         # write the output file and markup the image for display
         file = open(args.outputFile,"w")
         file.write("{\n")
 
-        print("# of bounding boxes remaining: " + str(len(boundingBoxes)))
+        print("# of bounding boxes remaining after containment pruning: " + str(len(boundingBoxes)))
 
         totalLen = len(boundingBoxes)
 
@@ -197,9 +181,9 @@ def main():
 
             #Step 3: Set the bounding box color, per iteration.
 
-            #cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 0, 0), 1)
+            cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 0, 0), 1)
 
-            cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 255, 0), 1)
+            #cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 255, 0), 1)
 
             org = (boundingBox.x-10,boundingBox.y+5)
             fontScale = .4
@@ -209,7 +193,7 @@ def main():
             name = str(totalLen - len(boundingBoxes))
 
             # Step 4: Render text only after second iteration.
-            img = cv2.putText(img, name, org, font, fontScale, color, thickness, cv2.LINE_AA)
+            #img = cv2.putText(img, name, org, font, fontScale, color, thickness, cv2.LINE_AA)
 
             file.write("\""+"icon-"+name+"\": {\n")
             file.write("\t\"x\": "+str(boundingBox.x)+",\n")
