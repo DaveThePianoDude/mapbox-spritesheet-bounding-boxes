@@ -1,537 +1,537 @@
 {
-  "t-icon-1": {
+  "building-police": {
     "x": 26,
     "y": 26,
     "width": 13,
     "height": 13,
     "pixelRatio": 1
   },
-  "t-icon-2": {
+  "building-prison": {
     "x": 58,
     "y": 19,
     "width": 25,
     "height": 27,
     "pixelRatio": 1
   },
-  "t-icon-3": {
+  "building-christian": {
     "x": 102,
     "y": 21,
     "width": 14,
     "height": 23,
     "pixelRatio": 1
   },
-  "t-icon-4": {
+  "building-islam": {
     "x": 135,
     "y": 20,
     "width": 15,
     "height": 25,
     "pixelRatio": 1
   },
-  "t-icon-5": {
+  "building-judiaism": {
     "x": 169,
     "y": 21,
     "width": 12,
     "height": 23,
     "pixelRatio": 1
   },
-  "t-icon-6": {
+  "building-minaret": {
     "x": 200,
     "y": 16,
     "width": 19,
     "height": 33,
     "pixelRatio": 1
   },
-  "t-icon-7": {
+  "building-pagoda": {
     "x": 238,
     "y": 21,
     "width": 17,
     "height": 23,
     "pixelRatio": 1
   },
-  "t-icon-8": {
+  "building-stupa": {
     "x": 275,
     "y": 20,
     "width": 21,
     "height": 25,
     "pixelRatio": 1
   },
-  "t-icon-9": {
+  "building-temple": {
     "x": 316,
     "y": 22,
     "width": 26,
     "height": 20,
     "pixelRatio": 1
   },
-  "t-icon-10": {
+  "building-school": {
     "x": 361,
     "y": 21,
     "width": 16,
     "height": 23,
     "pixelRatio": 1
   },
-  "t-icon-11": {
+  "building-diplomatic": {
     "x": 396,
     "y": 18,
     "width": 19,
     "height": 28,
     "pixelRatio": 1
   },
-  "t-icon-12": {
+  "building-motor-vehicle": {
     "x": 434,
     "y": 19,
     "width": 17,
     "height": 27,
     "pixelRatio": 1
   },
-  "t-icon-13": {
+  "building-hospital": {
     "x": 471,
     "y": 20,
     "width": 24,
     "height": 25,
     "pixelRatio": 1
   },
-  "t-icon-14": {
+  "building-health-station": {
     "x": 514,
     "y": 20,
     "width": 25,
     "height": 25,
     "pixelRatio": 1
   },
-  "t-icon-15": {
+  "building-not-intact": {
     "x": 558,
     "y": 27,
     "width": 11,
     "height": 11,
     "pixelRatio": 1
   },
-  "t-icon-16": {
+  "fortified-building": {
     "x": 588,
     "y": 21,
     "width": 23,
     "height": 23,
     "pixelRatio": 1
   },
-  "t-icon-17": {
+  "castle": {
     "x": 625,
     "y": 16,
     "width": 31,
     "height": 32,
     "pixelRatio": 1
   },
-  "t-icon-18": {
+  "fountain": {
     "x": 671,
     "y": 23,
     "width": 18,
     "height": 19,
     "pixelRatio": 1
   },
-  "t-icon-19": {
+  "hut": {
     "x": 696,
     "y": 28,
     "width": 7,
     "height": 8,
     "pixelRatio": 1
   },
-  "t-icon-20": {
+  "holding-pen": {
     "x": 709,
     "y": 25,
     "width": 15,
     "height": 15,
     "pixelRatio": 1
   },
-  "t-icon-21": {
+  "monument": {
     "x": 743,
     "y": 21,
     "width": 22,
     "height": 23,
     "pixelRatio": 1
   },
-  "t-icon-22": {
+  "ruin": {
     "x": 778,
     "y": 15,
     "width": 30,
     "height": 30,
     "pixelRatio": 1
   },
-  "t-icon-23": {
+  "greenhouse-point": {
     "x": 822,
     "y": 27,
     "width": 11,
     "height": 11,
     "pixelRatio": 1
   },
-  "t-icon-24": {
+  "greenhouse-surface": {
     "x": 851,
     "y": 24,
     "width": 33,
     "height": 17,
     "pixelRatio": 1
   },
-  "t-icon-25": {
+  "cemetery-christian": {
     "x": 903,
     "y": 19,
     "width": 17,
     "height": 27,
     "pixelRatio": 1
   },
-  "t-icon-26": {
+  "cemetery-islam": {
     "x": 939,
     "y": 19,
     "width": 20,
     "height": 27,
     "pixelRatio": 1
   },
-  "t-icon-27": {
+  "cemetery-judaism": {
     "x": 978,
     "y": 18,
     "width": 13,
     "height": 27,
     "pixelRatio": 1
   },
-  "t-icon-28": {
+  "cemetery-unkown": {
     "x": 1011,
     "y": 22,
     "width": 27,
     "height": 21,
     "pixelRatio": 1
   },
-  "t-icon-29": {
+  "cemetery-buddhism": {
     "x": 1056,
     "y": 26,
     "width": 25,
     "height": 15,
     "pixelRatio": 1
   },
-  "t-icon-30": {
+  "cemetery-shinto": {
     "x": 1098,
     "y": 24,
     "width": 28,
     "height": 17,
     "pixelRatio": 1
   },
-  "t-icon-31": {
+  "tower-communications-aerial": {
     "x": 1145,
     "y": 8,
     "width": 24,
     "height": 45,
     "pixelRatio": 1
   },
-  "t-icon-32": {
+  "tower-non-communications": {
     "x": 1187,
     "y": 14,
     "width": 16,
     "height": 37,
     "pixelRatio": 1
   },
-  "t-icon-33": {
+  "tower-water": {
     "x": 1222,
     "y": 14,
     "width": 16,
     "height": 37,
     "pixelRatio": 1
   },
-  "t-icon-34": {
+  "dish-aerial": {
     "x": 1257,
     "y": 16,
     "width": 19,
     "height": 32,
     "pixelRatio": 1
   },
-  "t-icon-35": {
+  "cooling-tower": {
     "x": 1295,
     "y": 16,
     "width": 25,
     "height": 33,
     "pixelRatio": 1
   },
-  "t-icon-36": {
+  "flare-pipe": {
     "x": 1339,
     "y": 15,
     "width": 16,
     "height": 35,
     "pixelRatio": 1
   },
-  "t-icon-37": {
+  "lighthouse": {
     "x": 1374,
     "y": 13,
     "width": 34,
     "height": 38,
     "pixelRatio": 1
   },
-  "t-icon-38": {
+  "water-intake-tower": {
     "x": 1427,
     "y": 19,
     "width": 19,
     "height": 27,
     "pixelRatio": 1
   },
-  "t-icon-39": {
+  "crane": {
     "x": 1465,
     "y": 22,
     "width": 25,
     "height": 21,
     "pixelRatio": 1
   },
-  "t-icon-40": {
+  "windmill": {
     "x": 18,
     "y": 66,
     "width": 19,
     "height": 33,
     "pixelRatio": 1
   },
-  "t-icon-41": {
+  "wind-turbine": {
     "x": 55,
     "y": 63,
     "width": 25,
     "height": 40,
     "pixelRatio": 1
   },
-  "t-icon-42": {
+  "smokestack": {
     "x": 99,
     "y": 72,
     "width": 18,
     "height": 21,
     "pixelRatio": 1
   },
-  "t-icon-43": {
+  "mooring-mast": {
     "x": 136,
     "y": 70,
     "width": 24,
     "height": 26,
     "pixelRatio": 1
   },
-  "t-icon-44": {
+  "ski-jump": {
     "x": 179,
     "y": 69,
     "width": 33,
     "height": 28,
     "pixelRatio": 1
   },
-  "t-icon-45": {
+  "water-mill": {
     "x": 232,
     "y": 72,
     "width": 22,
     "height": 21,
     "pixelRatio": 1
   },
-  "t-icon-46": {
+  "checkpoint": {
     "x": 273,
     "y": 71,
     "width": 25,
     "height": 24,
     "pixelRatio": 1
   },
-  "t-icon-47": {
+  "gate": {
     "x": 317,
     "y": 76,
     "width": 35,
     "height": 14,
     "pixelRatio": 1
   },
-  "t-icon-48": {
+  "power-substation": {
     "x": 371,
     "y": 66,
     "width": 16,
     "height": 33,
     "pixelRatio": 1
   },
-  "t-icon-49": {
+  "storage-tank": {
     "x": 406,
     "y": 76,
     "width": 13,
     "height": 14,
     "pixelRatio": 1
   },
-  "t-icon-50": {
+  "non-water-well": {
     "x": 438,
     "y": 75,
     "width": 16,
     "height": 16,
     "pixelRatio": 1
   },
-  "t-icon-51": {
+  "rig": {
     "x": 472,
     "y": 66,
     "width": 24,
     "height": 34,
     "pixelRatio": 1
   },
-  "t-icon-52": {
+  "surface-bunker": {
     "x": 516,
     "y": 72,
     "width": 28,
     "height": 22,
     "pixelRatio": 1
   },
-  "t-icon-53": {
+  "underground-bunker": {
     "x": 564,
     "y": 72,
     "width": 28,
     "height": 22,
     "pixelRatio": 1
   },
-  "t-icon-54": {
+  "extraction-mine-intact": {
     "x": 612,
     "y": 70,
     "width": 26,
     "height": 26,
     "pixelRatio": 1
   },
-  "t-icon-55": {
+  "extraction-mine-not-intact": {
     "x": 657,
     "y": 70,
     "width": 26,
     "height": 26,
     "pixelRatio": 1
   },
-  "t-icon-56": {
+  "unesco-world-heritage-site": {
     "x": 703,
     "y": 66,
     "width": 33,
     "height": 34,
     "pixelRatio": 1
   },
-  "t-icon-57": {
+  "dam-hard": {
     "x": 755,
     "y": 79,
     "width": 42,
     "height": 8,
     "pixelRatio": 1
   },
-  "t-icon-58": {
+  "dam-loose": {
     "x": 816,
     "y": 79,
     "width": 42,
     "height": 8,
     "pixelRatio": 1
   },
-  "t-icon-59": {
+  "lock": {
     "x": 876,
     "y": 74,
     "width": 21,
     "height": 18,
     "pixelRatio": 1
   },
-  "t-icon-60": {
+  "sluice-gate": {
     "x": 915,
     "y": 74,
     "width": 12,
     "height": 18,
     "pixelRatio": 1
   },
-  "t-icon-61": {
+  "tunnel-entrance": {
     "x": 945,
     "y": 63,
     "width": 10,
     "height": 39,
     "pixelRatio": 1
   },
-  "t-icon-62": {
+  "tunnel-exit": {
     "x": 973,
     "y": 63,
     "width": 10,
     "height": 39,
     "pixelRatio": 1
   },
-  "t-icon-63": {
+  "bridge-pedestrian": {
     "x": 1058,
     "y": 75,
     "width": 25,
     "height": 16,
     "pixelRatio": 1
   },
-  "t-icon-64": {
+  "bridge-road": {
     "x": 1102,
     "y": 69,
     "width": 61,
     "height": 28,
     "pixelRatio": 1
   },
-  "t-icon-65": {
+  "bridge-railway": {
     "x": 1179,
     "y": 63,
     "width": 73,
     "height": 40,
     "pixelRatio": 1
   },
-  "t-icon-66": {
+  "culvert-road": {
     "x": 1263,
     "y": 63,
     "width": 30,
     "height": 40,
     "pixelRatio": 1
   },
-  "t-icon-67": {
+  "culvert-railway": {
     "x": 1303,
     "y": 61,
     "width": 29,
     "height": 43,
     "pixelRatio": 1
   },
-  "t-icon-68": {
+  "wall": {
     "x": 1357,
     "y": 108,
     "width": 57,
     "height": 38,
     "pixelRatio": 1
   },
-  "t-icon-69": {
+  "fence": {
     "x": 1420,
     "y": 105,
     "width": 64,
     "height": 45,
     "pixelRatio": 1
   },
-  "t-icon-70": {
+  "pipeline-surface-water": {
     "x": 15,
     "y": 124,
     "width": 80,
     "height": 8,
     "pixelRatio": 1
   },
-  "t-icon-71": {
+  "pipeline-surface-not-water": {
     "x": 104,
     "y": 114,
     "width": 91,
     "height": 25,
     "pixelRatio": 1
   },
-  "t-icon-72": {
+  "pipeline-underground-water": {
     "x": 203,
     "y": 121,
     "width": 181,
     "height": 13,
     "pixelRatio": 1
   },
-  "t-icon-73": {
+  "pipeline-underground-not-water": {
     "x": 396,
     "y": 121,
     "width": 181,
     "height": 13,
     "pixelRatio": 1
   },
-  "t-icon-74": {
+  "pipeline-elevated-water": {
     "x": 584,
     "y": 115,
     "width": 179,
     "height": 25,
     "pixelRatio": 1
   },
-  "t-icon-75": {
+  "pipeline-elevated-not-water": {
     "x": 789,
     "y": 115,
     "width": 178,
     "height": 24,
     "pixelRatio": 1
   },
-  "t-icon-76": {
+  "sports-ground": {
     "x": 975,
     "y": 119,
     "width": 177,
     "height": 17,
     "pixelRatio": 1
   },
-  "t-icon-77": {
+  "vehicle-lot": {
     "x": 1165,
     "y": 119,
     "width": 180,
