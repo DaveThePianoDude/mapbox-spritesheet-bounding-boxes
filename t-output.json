@@ -468,70 +468,70 @@
     "height": 43,
     "pixelRatio": 1
   },
-  "wall": {
+  "sports-ground": {
     "x": 1357,
     "y": 108,
     "width": 57,
     "height": 38,
     "pixelRatio": 1
   },
-  "fence": {
+  "vehicle-lot": {
     "x": 1420,
     "y": 105,
     "width": 64,
     "height": 45,
     "pixelRatio": 1
   },
-  "pipeline-surface-water": {
+  "wall": {
     "x": 15,
     "y": 124,
-    "width": 80,
+    "width": 64,
     "height": 8,
     "pixelRatio": 1
   },
-  "pipeline-surface-not-water": {
+  "fence": {
     "x": 104,
     "y": 114,
     "width": 91,
     "height": 25,
     "pixelRatio": 1
   },
-  "pipeline-underground-water": {
+  "pipeline-surface-water": {
     "x": 203,
     "y": 121,
     "width": 181,
     "height": 13,
     "pixelRatio": 1
   },
-  "pipeline-underground-not-water": {
+  "pipeline-surface-not-water": {
     "x": 396,
     "y": 121,
     "width": 181,
     "height": 13,
     "pixelRatio": 1
   },
-  "pipeline-elevated-water": {
+  "pipeline-underground-water": {
     "x": 584,
     "y": 115,
     "width": 179,
     "height": 25,
     "pixelRatio": 1
   },
-  "pipeline-elevated-not-water": {
+  "pipeline-underground-not-water": {
     "x": 789,
     "y": 115,
     "width": 178,
     "height": 24,
     "pixelRatio": 1
   },
-  "sports-ground": {
+  "pipeline-elevated-water": {
     "x": 975,
     "y": 119,
     "width": 177,
     "height": 17,
     "pixelRatio": 1
   },
-  "vehicle-lot": {
+  "pipeline-elevated-not-water": {
     "x": 1165,
     "y": 119,
     "width": 180,
