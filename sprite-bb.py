@@ -40,11 +40,11 @@ class Icon:
         return "<Icon x:%s y:%s w:%s h:%s>" % (self.x, self.y, self.width, self.height)
 
     def getTier(self):
-        if (self.y < 55):
+        if (self.y < 85):
             return 0
-        if (self.y >= 55 and self.y <= 110):
+        if (self.y >= 85 and self.y <= 174):
             return 1
-        if (self.y > 110):
+        if (self.y > 174):
             return 2
 
     def getRank(self):
@@ -125,7 +125,12 @@ def convertClusters(sortedObjectsFound,height, width):
             if p.y > yBottom:
                 yBottom=p.y
 
-        boundingBox = Icon(xLeft-1, yTop-1, (xRight-xLeft)+2, (yBottom-yTop)+2)
+        if (iter == 1):
+            margin = 2
+        else:
+            margin = 1
+
+        boundingBox = Icon(xLeft-margin, yTop-margin, (xRight-xLeft)+margin*2, (yBottom-yTop)+margin*2)
         boundingBoxes.append(boundingBox)
 
 # Save image in set directory
