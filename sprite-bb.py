@@ -126,9 +126,9 @@ def convertClusters(sortedObjectsFound,height, width):
                 yBottom=p.y
 
         if (iter == 1):
-            margin = 4
+            margin = 8
         else:
-            margin = -3
+            margin = -7
 
         boundingBox = Icon(xLeft-margin, yTop-margin, (xRight-xLeft)+margin*2, (yBottom-yTop)+margin*2)
         boundingBoxes.append(boundingBox)
