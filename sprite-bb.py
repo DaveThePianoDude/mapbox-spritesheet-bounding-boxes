@@ -126,7 +126,7 @@ def convertClusters(sortedObjectsFound,height, width):
                 yBottom=p.y
 
         if (iter == 1):
-            margin = 8
+            margin = -1 
         else:
             margin = -7
 
@@ -167,7 +167,7 @@ def main():
 
         # Step 1: Set the color that is used in the interrogate function.
         if (iter == 1):
-            bgr = (255,250,250)
+            bgr = (25,25,25)
         else:
             bgr = (255,0,0)
 

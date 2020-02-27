@@ -1,0 +1,121 @@
+{
+  "forest-deciduous": {
+    "x": 28,
+    "y": 222,
+    "width": 78,
+    "height": 43,
+    "pixelRatio": 1
+  },
+  "forest-evergreen": {
+    "x": 157,
+    "y": 223,
+    "width": 78,
+    "height": 40,
+    "pixelRatio": 1
+  },
+  "forest-mixed": {
+    "x": 284,
+    "y": 219,
+    "width": 81,
+    "height": 46,
+    "pixelRatio": 1
+  },
+  "forest-unknown": {
+    "x": 414,
+    "y": 222,
+    "width": 75,
+    "height": 39,
+    "pixelRatio": 1
+  },
+  "forest-scattered": {
+    "x": 545,
+    "y": 214,
+    "width": 112,
+    "height": 57,
+    "pixelRatio": 1
+  },
+  "forest-brush/thicket": {
+    "x": 706,
+    "y": 219,
+    "width": 85,
+    "height": 48,
+    "pixelRatio": 1
+  },
+  "vineyard": {
+    "x": 837,
+    "y": 217,
+    "width": 77,
+    "height": 50,
+    "pixelRatio": 1
+  },
+  "cane": {
+    "x": 1001,
+    "y": 222,
+    "width": 76,
+    "height": 52,
+    "pixelRatio": 1
+  },
+  "tropical-grassland": {
+    "x": 1120,
+    "y": 217,
+    "width": 126,
+    "height": 51,
+    "pixelRatio": 1
+  },
+  "orchard-cropland": {
+    "x": 1294,
+    "y": 220,
+    "width": 88,
+    "height": 44,
+    "pixelRatio": 1
+  },
+  "orchard-other": {
+    "x": 1434,
+    "y": 222,
+    "width": 85,
+    "height": 43,
+    "pixelRatio": 1
+  },
+  "orchard-permanent-irrigation": {
+    "x": 1570,
+    "y": 222,
+    "width": 82,
+    "height": 43,
+    "pixelRatio": 1
+  },
+  "trees-row": {
+    "x": 1695,
+    "y": 234,
+    "width": 20,
+    "height": 19,
+    "pixelRatio": 1
+  },
+  "hedgerow": {
+    "x": 1760,
+    "y": 238,
+    "width": 59,
+    "height": 11,
+    "pixelRatio": 1
+  },
+  "deciduous-tree": {
+    "x": 1866,
+    "y": 225,
+    "width": 43,
+    "height": 32,
+    "pixelRatio": 1
+  },
+  "evergreen-tree": {
+    "x": 1940,
+    "y": 225,
+    "width": 54,
+    "height": 37,
+    "pixelRatio": 1
+  },
+  "other-tree": {
+    "x": 2029,
+    "y": 223,
+    "width": 29,
+    "height": 39,
+    "pixelRatio": 1
+  }
+}
