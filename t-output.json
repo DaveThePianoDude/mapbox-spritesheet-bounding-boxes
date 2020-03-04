@@ -525,9 +525,9 @@
     "pixelRatio": 1
   },
   "pipeline-elevated-water": {
-    "x": 892,
+    "x": 891,
     "y": 191,
-    "width": 168,
+    "width": 169,
     "height": 14,
     "pixelRatio": 1
   },
@@ -536,6 +536,244 @@
     "y": 191,
     "width": 172,
     "height": 14,
+    "pixelRatio": 1
+  },
+  "forest-deciduous": {
+    "x": 25,
+    "y": 251,
+    "width": 83,
+    "height": 47,
+    "pixelRatio": 1
+  },
+  "forest-evergreen": {
+    "x": 154,
+    "y": 251,
+    "width": 82,
+    "height": 47,
+    "pixelRatio": 1
+  },
+  "forest-mixed": {
+    "x": 283,
+    "y": 250,
+    "width": 83,
+    "height": 48,
+    "pixelRatio": 1
+  },
+  "forest-unknown": {
+    "x": 412,
+    "y": 251,
+    "width": 83,
+    "height": 48,
+    "pixelRatio": 1
+  },
+  "forest-scattered": {
+    "x": 541,
+    "y": 246,
+    "width": 119,
+    "height": 57,
+    "pixelRatio": 1
+  },
+  "forest-brush/thicket": {
+    "x": 706,
+    "y": 250,
+    "width": 83,
+    "height": 48,
+    "pixelRatio": 1
+  },
+  "vineyard": {
+    "x": 835,
+    "y": 248,
+    "width": 81,
+    "height": 53,
+    "pixelRatio": 1
+  },
+  "cane": {
+    "x": 963,
+    "y": 235,
+    "width": 116,
+    "height": 79,
+    "pixelRatio": 1
+  },
+  "grassland-tropical": {
+    "x": 1126,
+    "y": 249,
+    "width": 119,
+    "height": 51,
+    "pixelRatio": 1
+  },
+  "orchard-cropland": {
+    "x": 1292,
+    "y": 251,
+    "width": 94,
+    "height": 48,
+    "pixelRatio": 1
+  },
+  "orchard-other": {
+    "x": 1433,
+    "y": 251,
+    "width": 88,
+    "height": 48,
+    "pixelRatio": 1
+  },
+  "orchard-permanent-irrigation": {
+    "x": 1567,
+    "y": 251,
+    "width": 88,
+    "height": 48,
+    "pixelRatio": 1
+  },
+  "trees-row": {
+    "x": 1702,
+    "y": 271,
+    "width": 8,
+    "height": 7,
+    "pixelRatio": 1
+  },
+  "hedgerow": {
+    "x": 1757,
+    "y": 271,
+    "width": 66,
+    "height": 7,
+    "pixelRatio": 1
+  },
+  "tree-deciduous": {
+    "x": 1870,
+    "y": 262,
+    "width": 35,
+    "height": 25,
+    "pixelRatio": 1
+  },
+  "tree-evergreen": {
+    "x": 1950,
+    "y": 259,
+    "width": 37,
+    "height": 31,
+    "pixelRatio": 1
+  },
+  "tree-other": {
+    "x": 2034,
+    "y": 260,
+    "width": 20,
+    "height": 29,
+    "pixelRatio": 1
+  },
+  "road-hard-surface-divided-highway-wide-sep-4-6-lane": {
+    "x": 29,
+    "y": 347,
+    "width": 79,
+    "height": 20,
+    "pixelRatio": 1
+  },
+  "road-hard-surface-divided-highway-narrow-sep-4-6-lane": {
+    "x": 141,
+    "y": 347,
+    "width": 79,
+    "height": 20,
+    "pixelRatio": 1
+  },
+  "road-hard-surface-not-intact-divided-4-6-lane": {
+    "x": 253,
+    "y": 347,
+    "width": 78,
+    "height": 20,
+    "pixelRatio": 1
+  },
+  "road-hard-surface-divided-highway-wide-sep-2-3-lane": {
+    "x": 364,
+    "y": 350,
+    "width": 79,
+    "height": 14,
+    "pixelRatio": 1
+  },
+  "road-hard-surface-divided-highway-narrow-sep-2-3-lane": {
+    "x": 476,
+    "y": 350,
+    "width": 78,
+    "height": 14,
+    "pixelRatio": 1
+  },
+  "road-hard-surface-not-intact-divided-2-3-lane": {
+    "x": 586,
+    "y": 341,
+    "width": 55,
+    "height": 32,
+    "pixelRatio": 1
+  },
+  "road-hard-surface-divided-highway-wide-sep-1-lane": {
+    "x": 673,
+    "y": 343,
+    "width": 54,
+    "height": 28,
+    "pixelRatio": 1
+  },
+  "road-hard-surface-divided-highway-narrow-sep-1-lane": {
+    "x": 760,
+    "y": 343,
+    "width": 52,
+    "height": 28,
+    "pixelRatio": 1
+  },
+  "road-hard-surface-not-intact-divided-1-lane": {
+    "x": 845,
+    "y": 335,
+    "width": 46,
+    "height": 45,
+    "pixelRatio": 1
+  },
+  "road-loose-surface-4-6-lane": {
+    "x": 25,
+    "y": 411,
+    "width": 130,
+    "height": 19,
+    "pixelRatio": 1
+  },
+  "road-loose-surface-2-3-lane": {
+    "x": 188,
+    "y": 411,
+    "width": 130,
+    "height": 19,
+    "pixelRatio": 1
+  },
+  "road-loose-surface-1-lane": {
+    "x": 351,
+    "y": 411,
+    "width": 130,
+    "height": 19,
+    "pixelRatio": 1
+  },
+  "road-street-fair-weather": {
+    "x": 514,
+    "y": 411,
+    "width": 130,
+    "height": 19,
+    "pixelRatio": 1
+  },
+  "road-not-intact-not-divided": {
+    "x": 677,
+    "y": 411,
+    "width": 130,
+    "height": 19,
+    "pixelRatio": 1
+  },
+  "track-cart": {
+    "x": 840,
+    "y": 411,
+    "width": 130,
+    "height": 19,
+    "pixelRatio": 1
+  },
+  "trail": {
+    "x": 1105,
+    "y": 414,
+    "width": 14,
+    "height": 13,
+    "pixelRatio": 1
+  },
+  "route-marker-international": {
+    "x": 1145,
+    "y": 411,
+    "width": 19,
+    "height": 19,
     "pixelRatio": 1
   }
 }

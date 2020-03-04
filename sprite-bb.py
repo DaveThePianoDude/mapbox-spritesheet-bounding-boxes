@@ -39,13 +39,20 @@ class Icon:
     def __repr__(self):
         return "<Icon x:%s y:%s w:%s h:%s>" % (self.x, self.y, self.width, self.height)
 
+    # Returns a number between 0 and n (non-inclusive) where n is the number of rows of icons in the sprite sheet.
     def getTier(self):
         if (self.y < 85):
             return 0
-        if (self.y >= 85 and self.y <= 174):
+        if (self.y >= 85 and self.y < 174):
             return 1
-        if (self.y > 174):
+        if (self.y >= 174 and self.y < 220):
             return 2
+        if (self.y >= 220 and self.y < 320):
+            return 3
+        if (self.y >= 320 and self.y < 395):
+            return 4
+        if (self.y >= 395):
+            return 5
 
     def getRank(self):
         return self.x + (3000 * self.getTier())
@@ -126,9 +133,9 @@ def convertClusters(sortedObjectsFound,height, width):
                 yBottom=p.y
 
         if (iter == 1):
-            margin = 4
+            margin = 8
         else:
-            margin = -3
+            margin = -7
 
         boundingBox = Icon(xLeft-margin, yTop-margin, (xRight-xLeft)+margin*2, (yBottom-yTop)+margin*2)
         boundingBoxes.append(boundingBox)
