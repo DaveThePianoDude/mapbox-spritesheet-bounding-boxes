@@ -14,10 +14,10 @@
     "pixelRatio": 1
   },
   "forest-mixed": {
-    "x": 284,
-    "y": 219,
-    "width": 81,
-    "height": 46,
+    "x": 286,
+    "y": 221,
+    "width": 78,
+    "height": 42,
     "pixelRatio": 1
   },
   "forest-unknown": {
@@ -37,7 +37,7 @@
   "forest-brush/thicket": {
     "x": 706,
     "y": 219,
-    "width": 85,
+    "width": 84,
     "height": 48,
     "pixelRatio": 1
   },
@@ -55,7 +55,7 @@
     "height": 52,
     "pixelRatio": 1
   },
-  "tropical-grassland": {
+  "grassland-tropical": {
     "x": 1120,
     "y": 217,
     "width": 126,
@@ -64,9 +64,9 @@
   },
   "orchard-cropland": {
     "x": 1294,
-    "y": 220,
-    "width": 88,
-    "height": 44,
+    "y": 219,
+    "width": 90,
+    "height": 46,
     "pixelRatio": 1
   },
   "orchard-other": {

@@ -6,12 +6,12 @@ forest-scattered,5
 forest-brush/thicket,6
 vineyard,7
 cane,8
-tropical-grassland,9
+grassland-tropical,9
 orchard-cropland,10
 orchard-other,11
-orchard-permanent-irrigation,12
+orchard-permanent-irrigation, 12
 trees-row,13
 hedgerow,14
-deciduous-tree,15
-evergreen-tree,16
-other-tree,17
+tree-deciduous,15
+tree-evergreen,16
+tree-other,17

@@ -76,7 +76,7 @@ def scan(icon,x,y,color):
         scan(icon,x,y+1,color)
 
 def growClusters(height, width, color):
-    for y in range(height-2):
+    for y in range(5, height-2):
        for x in range(width-2):
            if interrogate(x,y,color):
             img[y,x] = [100, 0, 255]
@@ -126,9 +126,9 @@ def convertClusters(sortedObjectsFound,height, width):
                 yBottom=p.y
 
         if (iter == 1):
-            margin = -1 
+            margin = 4
         else:
-            margin = -7
+            margin = -3
 
         boundingBox = Icon(xLeft-margin, yTop-margin, (xRight-xLeft)+margin*2, (yBottom-yTop)+margin*2)
         boundingBoxes.append(boundingBox)
@@ -167,7 +167,7 @@ def main():
 
         # Step 1: Set the color that is used in the interrogate function.
         if (iter == 1):
-            bgr = (25,25,25)
+            bgr = (255,255,255)
         else:
             bgr = (255,0,0)
 

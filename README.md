@@ -8,9 +8,9 @@ The script uses open CV version 2 for the image processing.
 
 Usage:
 
-./sprite-bb.py <inputFile> <outputFile>
+./sprite-bb.py <inputFile> <outputFile> <iteration>
 
-e.g., ./sprite-bb.py tlm_master_legend_spritemap_2.png output.json
+e.g., ./sprite-bb.py tlm_master_legend_spritemap_2.png output.json 1
 
 The program displays the result of the recursive search.  To dismiss the display, click on the image and press any key.
 
@@ -25,3 +25,6 @@ On some systems you may need to issue this command at the terminal command line:
 export QT_X11_NO_MITSHM=1
 
 This avoids strange hardware errors such as "BadDrawable (invalid Pixmap or Window parameter)."
+
+The iteration parameter has a value of 1 or 2 and specifies the first pass or the second pass.
+
