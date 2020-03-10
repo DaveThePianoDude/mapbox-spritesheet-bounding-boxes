@@ -51,8 +51,10 @@ class Icon:
             return 3
         if (self.y >= 320 and self.y < 395):
             return 4
-        if (self.y >= 395):
+        if (self.y >= 395 and self.y < 430):
             return 5
+        if (self.y >= 430):
+            return 6
 
     def getRank(self):
         return self.x + (3000 * self.getTier())
@@ -135,10 +137,12 @@ def convertClusters(sortedObjectsFound,height, width):
         if (iter == 1):
             margin = 8
         else:
-            margin = -7
+            margin = -8
 
         boundingBox = Icon(xLeft-margin, yTop-margin, (xRight-xLeft)+margin*2, (yBottom-yTop)+margin*2)
-        boundingBoxes.append(boundingBox)
+        area = boundingBox.height * boundingBox.width
+        if (area > 4):
+            boundingBoxes.append(boundingBox)
 
 # Save image in set directory
 # Read bgr image
