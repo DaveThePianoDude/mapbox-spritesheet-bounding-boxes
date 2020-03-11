@@ -20,7 +20,7 @@ Follow the steps in the comments to set up the first vs. second iteration logic.
 
 NOTE:
 
-On some systems you may need to issue this command at the terminal command line:
+On some systems you may need to issue this command at the terminal command line: or, better yet, to your .bashrc file.
 
 export QT_X11_NO_MITSHM=1
 
