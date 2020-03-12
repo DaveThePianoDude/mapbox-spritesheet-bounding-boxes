@@ -53,8 +53,12 @@ class Icon:
             return 4
         if (self.y >= 395 and self.y < 430):
             return 5
-        if (self.y >= 430):
+        if (self.y >= 430 and self.y < 520):
             return 6
+        if (self.y >= 520 and self.y < 605):
+            return 7
+        if (self.y > 605):
+            return 8
 
     def getRank(self):
         return self.x + (3000 * self.getTier())
