@@ -245,7 +245,7 @@ def main():
 
         cv2.imwrite("v-blue-"+args.inputFile, img)
 
-        scale_percent = 150 # percent of original size
+        scale_percent = 70 # percent of original size
         width = int(img.shape[1] * scale_percent / 100)
         height = int(img.shape[0] * scale_percent / 100)
         dim = (width, height)
