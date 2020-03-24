@@ -18,7 +18,9 @@ def parseCsv(csvFile):
 # key is a base-1 integer but csv rows are base-0.  Subtract 1 to get the correct value.
 def lookupNameValue(key):
     key -= 1
-    return csvRows[key][0]
+    mappedValue = csvRows[key][0]
+    
+    return mappedValue
 
 def map(inputFile, outputFile):
     with open(inputFile, 'r') as file:

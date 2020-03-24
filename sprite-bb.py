@@ -63,6 +63,14 @@ class Icon:
     def getRank(self):
         return self.x + (3000 * self.getTier())
 
+    def shrink(self, amt):
+        self.x = self.x + amt
+        self.y = self.y + amt
+        self.width = self.width - amt * 2
+        self.height = self.height - amt * 2
+
+        return self
+
 #returns true if the pixel at (x,y) is black.
 def interrogate(x,y,color):
     _blue = img[y,x,0]
@@ -119,6 +127,7 @@ def containsAny(A):
 # convert the objects (clusters of points) found into bounding boxes
 def convertClusters(sortedObjectsFound,height, width):
     print ("Found " + str(len(sortedObjectsFound)) + " bounding boxes.")
+
     while (len(sortedObjectsFound) > 0):
         thing = sortedObjectsFound.pop()
         xLeft=width
@@ -139,9 +148,9 @@ def convertClusters(sortedObjectsFound,height, width):
                 yBottom=p.y
 
         if (iter == 1):
-            margin =  9
+            margin = 9
         else:
-            margin = -7
+            margin = -9
 
         boundingBox = Icon(xLeft-margin, yTop-margin, (xRight-xLeft)+margin*2, (yBottom-yTop)+margin*2)
         area = boundingBox.height * boundingBox.width
@@ -208,14 +217,22 @@ def main():
 
         totalLen = len(boundingBoxes)
 
+        index = 0
+
         while(len(boundingBoxes) > 0):
             boundingBox = boundingBoxes.pop()
+
+            if ((iter == 2) and (index >= 77) and (index < 89)):
+                print ("Shrinking item " + str(index))
+                print (boundingBox)
+                boungingBox = boundingBox.shrink(4);
+                print (boundingBox)
 
             #Step 3: Set the bounding box color, per iteration.
             if (iter == 1):
                 cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 0, 0), 1)
             else:
-                cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 255, 0), 1)
+                cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (0, 0, 0), 1)
 
             org = (boundingBox.x-10,boundingBox.y+5)
             fontScale = .4
@@ -239,6 +256,8 @@ def main():
                 file.write("}\n")
             else:
                 file.write("},\n")
+
+            index = index + 1
 
         file.write("}\n")
         file.close()
