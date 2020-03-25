@@ -41,24 +41,22 @@ class Icon:
 
     # Returns a number between 0 and n (non-inclusive) where n is the number of rows of icons in the sprite sheet.
     def getTier(self):
-        if (self.y < 85):
+        avgY = (self.y + (self.y+self.height)) / 2
+
+        if (avgY < 80):
             return 0
-        if (self.y >= 85 and self.y < 174):
+        if (avgY < 150):
             return 1
-        if (self.y >= 174 and self.y < 220):
+        if (avgY < 250):
             return 2
-        if (self.y >= 220 and self.y < 320):
+        if (avgY < 330):
             return 3
-        if (self.y >= 320 and self.y < 395):
+        if (avgY < 415):
             return 4
-        if (self.y >= 395 and self.y < 430):
+        if (avgY < 510):
             return 5
-        if (self.y >= 430 and self.y < 520):
+        else:
             return 6
-        if (self.y >= 520 and self.y < 605):
-            return 7
-        if (self.y > 605):
-            return 8
 
     def getRank(self):
         return self.x + (3000 * self.getTier())
