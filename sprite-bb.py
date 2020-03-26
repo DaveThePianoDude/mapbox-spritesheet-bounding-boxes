@@ -232,8 +232,8 @@ def main():
             else:
                 cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (0, 0, 0), 1)
 
-            org = (boundingBox.x-10,boundingBox.y+5)
-            fontScale = .4
+            org = (boundingBox.x-10,boundingBox.y-15)
+            fontScale = .6
             color = (20, 20, 20)
             thickness = 1
 
