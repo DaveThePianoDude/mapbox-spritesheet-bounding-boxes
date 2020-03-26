@@ -539,87 +539,87 @@
 	"pixelRatio": 1
 },
 "icon-78": {
-	"x": 1357,
-	"y": 195,
-	"width": 34,
-	"height": 21,
+	"x": 1353,
+	"y": 191,
+	"width": 42,
+	"height": 29,
 	"pixelRatio": 1
 },
 "icon-79": {
-	"x": 1429,
-	"y": 195,
-	"width": 33,
-	"height": 21,
+	"x": 1425,
+	"y": 191,
+	"width": 41,
+	"height": 29,
 	"pixelRatio": 1
 },
 "icon-80": {
-	"x": 1500,
-	"y": 192,
-	"width": 29,
-	"height": 28,
+	"x": 1496,
+	"y": 188,
+	"width": 37,
+	"height": 36,
 	"pixelRatio": 1
 },
 "icon-81": {
-	"x": 1567,
-	"y": 192,
-	"width": 30,
-	"height": 28,
+	"x": 1563,
+	"y": 188,
+	"width": 38,
+	"height": 36,
 	"pixelRatio": 1
 },
 "icon-82": {
-	"x": 1634,
-	"y": 185,
-	"width": 42,
-	"height": 41,
+	"x": 1630,
+	"y": 181,
+	"width": 50,
+	"height": 49,
 	"pixelRatio": 1
 },
 "icon-83": {
-	"x": 1714,
-	"y": 206,
-	"width": 55,
-	"height": -1,
+	"x": 1710,
+	"y": 202,
+	"width": 63,
+	"height": 7,
 	"pixelRatio": 1
 },
 "icon-84": {
-	"x": 1807,
-	"y": 206,
-	"width": 55,
-	"height": -1,
+	"x": 1803,
+	"y": 202,
+	"width": 63,
+	"height": 7,
 	"pixelRatio": 1
 },
 "icon-85": {
-	"x": 1898,
-	"y": 197,
-	"width": 20,
-	"height": 17,
+	"x": 1894,
+	"y": 193,
+	"width": 28,
+	"height": 25,
 	"pixelRatio": 1
 },
 "icon-86": {
-	"x": 1953,
-	"y": 197,
-	"width": 6,
-	"height": 17,
+	"x": 1949,
+	"y": 193,
+	"width": 14,
+	"height": 25,
 	"pixelRatio": 1
 },
 "icon-87": {
-	"x": 1994,
-	"y": 180,
-	"width": 4,
-	"height": 51,
+	"x": 1990,
+	"y": 176,
+	"width": 12,
+	"height": 59,
 	"pixelRatio": 1
 },
 "icon-88": {
-	"x": 2032,
-	"y": 180,
-	"width": 3,
-	"height": 51,
+	"x": 2028,
+	"y": 176,
+	"width": 11,
+	"height": 59,
 	"pixelRatio": 1
 },
 "icon-89": {
-	"x": 2072,
-	"y": 199,
-	"width": 26,
-	"height": 13,
+	"x": 2068,
+	"y": 195,
+	"width": 34,
+	"height": 21,
 	"pixelRatio": 1
 },
 "icon-90": {
@@ -882,17 +882,17 @@
 	"pixelRatio": 1
 },
 "icon-127": {
-	"x": 440,
-	"y": 363,
-	"width": 35,
-	"height": 23,
+	"x": 444,
+	"y": 367,
+	"width": 27,
+	"height": 15,
 	"pixelRatio": 1
 },
 "icon-128": {
-	"x": 504,
-	"y": 363,
-	"width": 35,
-	"height": 23,
+	"x": 508,
+	"y": 367,
+	"width": 27,
+	"height": 15,
 	"pixelRatio": 1
 },
 "icon-129": {
@@ -917,31 +917,31 @@
 	"pixelRatio": 1
 },
 "icon-132": {
-	"x": 741,
-	"y": 357,
-	"width": 69,
-	"height": 35,
+	"x": 745,
+	"y": 361,
+	"width": 61,
+	"height": 27,
 	"pixelRatio": 1
 },
 "icon-133": {
-	"x": 839,
-	"y": 352,
-	"width": 80,
-	"height": 46,
+	"x": 843,
+	"y": 356,
+	"width": 72,
+	"height": 38,
 	"pixelRatio": 1
 },
 "icon-134": {
-	"x": 948,
-	"y": 352,
-	"width": 80,
-	"height": 45,
+	"x": 952,
+	"y": 356,
+	"width": 72,
+	"height": 37,
 	"pixelRatio": 1
 },
 "icon-135": {
-	"x": 1057,
-	"y": 352,
-	"width": 79,
-	"height": 45,
+	"x": 1061,
+	"y": 356,
+	"width": 71,
+	"height": 37,
 	"pixelRatio": 1
 },
 "icon-136": {
@@ -952,24 +952,24 @@
 	"pixelRatio": 1
 },
 "icon-137": {
-	"x": 1259,
-	"y": 352,
-	"width": 80,
-	"height": 45,
+	"x": 1263,
+	"y": 356,
+	"width": 72,
+	"height": 37,
 	"pixelRatio": 1
 },
 "icon-138": {
-	"x": 1368,
-	"y": 352,
-	"width": 79,
-	"height": 45,
+	"x": 1372,
+	"y": 356,
+	"width": 71,
+	"height": 37,
 	"pixelRatio": 1
 },
 "icon-139": {
-	"x": 1477,
-	"y": 352,
-	"width": 79,
-	"height": 45,
+	"x": 1481,
+	"y": 356,
+	"width": 71,
+	"height": 37,
 	"pixelRatio": 1
 },
 "icon-140": {
@@ -1015,94 +1015,94 @@
 	"pixelRatio": 1
 },
 "icon-146": {
-	"x": 2005,
-	"y": 352,
-	"width": 80,
-	"height": 45,
+	"x": 2009,
+	"y": 356,
+	"width": 72,
+	"height": 37,
 	"pixelRatio": 1
 },
 "icon-147": {
-	"x": 2115,
-	"y": 352,
-	"width": 80,
-	"height": 45,
+	"x": 2119,
+	"y": 356,
+	"width": 72,
+	"height": 37,
 	"pixelRatio": 1
 },
 "icon-148": {
-	"x": 2225,
-	"y": 352,
-	"width": 80,
-	"height": 45,
+	"x": 2229,
+	"y": 356,
+	"width": 72,
+	"height": 37,
 	"pixelRatio": 1
 },
 "icon-149": {
-	"x": 2334,
-	"y": 352,
-	"width": 81,
-	"height": 45,
+	"x": 2338,
+	"y": 356,
+	"width": 73,
+	"height": 37,
 	"pixelRatio": 1
 },
 "icon-150": {
-	"x": 33,
-	"y": 438,
-	"width": 117,
-	"height": 56,
+	"x": 37,
+	"y": 442,
+	"width": 109,
+	"height": 48,
 	"pixelRatio": 1
 },
 "icon-151": {
-	"x": 179,
-	"y": 443,
-	"width": 81,
-	"height": 46,
+	"x": 183,
+	"y": 447,
+	"width": 73,
+	"height": 38,
 	"pixelRatio": 1
 },
 "icon-152": {
-	"x": 289,
-	"y": 440,
-	"width": 79,
-	"height": 51,
+	"x": 293,
+	"y": 444,
+	"width": 71,
+	"height": 43,
 	"pixelRatio": 1
 },
 "icon-153": {
-	"x": 398,
-	"y": 427,
-	"width": 114,
-	"height": 77,
+	"x": 402,
+	"y": 431,
+	"width": 106,
+	"height": 69,
 	"pixelRatio": 1
 },
 "icon-154": {
-	"x": 542,
-	"y": 441,
-	"width": 117,
-	"height": 49,
+	"x": 546,
+	"y": 445,
+	"width": 109,
+	"height": 41,
 	"pixelRatio": 1
 },
 "icon-155": {
-	"x": 688,
-	"y": 442,
-	"width": 94,
-	"height": 47,
+	"x": 692,
+	"y": 446,
+	"width": 86,
+	"height": 39,
 	"pixelRatio": 1
 },
 "icon-156": {
-	"x": 810,
-	"y": 442,
-	"width": 87,
-	"height": 47,
+	"x": 814,
+	"y": 446,
+	"width": 79,
+	"height": 39,
 	"pixelRatio": 1
 },
 "icon-157": {
-	"x": 925,
-	"y": 442,
-	"width": 87,
-	"height": 47,
+	"x": 929,
+	"y": 446,
+	"width": 79,
+	"height": 39,
 	"pixelRatio": 1
 },
 "icon-158": {
-	"x": 1041,
-	"y": 463,
-	"width": 6,
-	"height": 5,
+	"x": 1045,
+	"y": 467,
+	"width": -2,
+	"height": -3,
 	"pixelRatio": 1
 },
 "icon-159": {
@@ -1204,24 +1204,24 @@
 	"pixelRatio": 1
 },
 "icon-173": {
-	"x": 2110,
-	"y": 443,
-	"width": 81,
-	"height": 45,
+	"x": 2114,
+	"y": 447,
+	"width": 73,
+	"height": 37,
 	"pixelRatio": 1
 },
 "icon-174": {
-	"x": 2220,
-	"y": 443,
-	"width": 81,
-	"height": 45,
+	"x": 2224,
+	"y": 447,
+	"width": 73,
+	"height": 37,
 	"pixelRatio": 1
 },
 "icon-175": {
-	"x": 2330,
-	"y": 443,
-	"width": 81,
-	"height": 45,
+	"x": 2334,
+	"y": 447,
+	"width": 73,
+	"height": 37,
 	"pixelRatio": 1
 },
 "icon-176": {

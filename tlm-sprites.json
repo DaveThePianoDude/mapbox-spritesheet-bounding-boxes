@@ -62,6 +62,41 @@
     "height": 5,
     "pixelRatio": 1
   },
+  "construction": {
+    "x": 1403,
+    "y": 36,
+    "width": 76,
+    "height": 19,
+    "pixelRatio": 1
+  },
+  "road-street-fair-weather": {
+    "x": 1509,
+    "y": 36,
+    "width": 77,
+    "height": 19,
+    "pixelRatio": 1
+  },
+  "road-not-intact-not-divided": {
+    "x": 1616,
+    "y": 36,
+    "width": 77,
+    "height": 19,
+    "pixelRatio": 1
+  },
+  "track-cart": {
+    "x": 1723,
+    "y": 40,
+    "width": 76,
+    "height": 12,
+    "pixelRatio": 1
+  },
+  "trail": {
+    "x": 1829,
+    "y": 40,
+    "width": 77,
+    "height": 12,
+    "pixelRatio": 1
+  },
   "route-marker-international": {
     "x": 1935,
     "y": 30,
@@ -497,87 +532,87 @@
     "pixelRatio": 1
   },
   "surface-bunker": {
-    "x": 1357,
-    "y": 195,
-    "width": 34,
-    "height": 21,
+    "x": 1353,
+    "y": 191,
+    "width": 42,
+    "height": 29,
     "pixelRatio": 1
   },
   "underground-bunker": {
-    "x": 1429,
-    "y": 195,
-    "width": 33,
-    "height": 21,
+    "x": 1425,
+    "y": 191,
+    "width": 41,
+    "height": 29,
     "pixelRatio": 1
   },
   "extraction-mine-intact": {
-    "x": 1500,
-    "y": 192,
-    "width": 29,
-    "height": 28,
+    "x": 1496,
+    "y": 188,
+    "width": 37,
+    "height": 36,
     "pixelRatio": 1
   },
   "extraction-mine-not-intact": {
-    "x": 1567,
-    "y": 192,
-    "width": 30,
-    "height": 28,
+    "x": 1563,
+    "y": 188,
+    "width": 38,
+    "height": 36,
     "pixelRatio": 1
   },
   "unesco-world-heritage-site": {
-    "x": 1634,
-    "y": 185,
-    "width": 42,
-    "height": 41,
+    "x": 1630,
+    "y": 181,
+    "width": 50,
+    "height": 49,
     "pixelRatio": 1
   },
   "dam-hard": {
-    "x": 1714,
-    "y": 206,
-    "width": 55,
-    "height": -1,
+    "x": 1710,
+    "y": 202,
+    "width": 63,
+    "height": 7,
     "pixelRatio": 1
   },
   "dam-loose": {
-    "x": 1807,
-    "y": 206,
-    "width": 55,
-    "height": -1,
+    "x": 1803,
+    "y": 202,
+    "width": 63,
+    "height": 7,
     "pixelRatio": 1
   },
   "lock": {
-    "x": 1898,
-    "y": 197,
-    "width": 20,
-    "height": 17,
+    "x": 1894,
+    "y": 193,
+    "width": 28,
+    "height": 25,
     "pixelRatio": 1
   },
   "sluice-gate": {
-    "x": 1953,
-    "y": 197,
-    "width": 6,
-    "height": 17,
+    "x": 1949,
+    "y": 193,
+    "width": 14,
+    "height": 25,
     "pixelRatio": 1
   },
   "tunnel-entrance": {
-    "x": 1994,
-    "y": 180,
-    "width": 4,
-    "height": 51,
+    "x": 1990,
+    "y": 176,
+    "width": 12,
+    "height": 59,
     "pixelRatio": 1
   },
   "tunnel-exit": {
-    "x": 2032,
-    "y": 180,
-    "width": 3,
-    "height": 51,
+    "x": 2028,
+    "y": 176,
+    "width": 11,
+    "height": 59,
     "pixelRatio": 1
   },
   "bridge-pedestrian": {
-    "x": 2072,
-    "y": 199,
-    "width": 26,
-    "height": 13,
+    "x": 2068,
+    "y": 195,
+    "width": 34,
+    "height": 21,
     "pixelRatio": 1
   },
   "bridge-road": {
@@ -727,11 +762,46 @@
     "height": 6,
     "pixelRatio": 1
   },
+  "land-aerodrome-beacon": {
+    "x": 1862,
+    "y": 285,
+    "width": 18,
+    "height": 17,
+    "pixelRatio": 1
+  },
+  "water-aerodrome": {
+    "x": 1910,
+    "y": 265,
+    "width": 57,
+    "height": 57,
+    "pixelRatio": 1
+  },
+  "helipad-non-hospital": {
+    "x": 1996,
+    "y": 275,
+    "width": 36,
+    "height": 37,
+    "pixelRatio": 1
+  },
+  "helipad-hospital": {
+    "x": 2060,
+    "y": 275,
+    "width": 36,
+    "height": 37,
+    "pixelRatio": 1
+  },
   "river-25m-wide-less-perennial": {
     "x": 2313,
     "y": 293,
     "width": 64,
     "height": 2,
+    "pixelRatio": 1
+  },
+  "ditch-dry": {
+    "x": 1110,
+    "y": 556,
+    "width": 64,
+    "height": 1,
     "pixelRatio": 1
   },
   "river-disappearing": {
@@ -763,17 +833,17 @@
     "pixelRatio": 1
   },
   "inland-waterbody-natural-dry-p": {
-    "x": 440,
-    "y": 363,
-    "width": 35,
-    "height": 23,
+    "x": 444,
+    "y": 367,
+    "width": 27,
+    "height": 15,
     "pixelRatio": 1
   },
   "inland-waterbody-natural-dry-s": {
-    "x": 504,
-    "y": 363,
-    "width": 35,
-    "height": 23,
+    "x": 508,
+    "y": 367,
+    "width": 27,
+    "height": 15,
     "pixelRatio": 1
   },
   "river-25m-wide-less-dry": {
@@ -791,31 +861,31 @@
     "pixelRatio": 1
   },
   "salt-evaporator": {
-    "x": 741,
-    "y": 357,
-    "width": 69,
-    "height": 35,
+    "x": 745,
+    "y": 361,
+    "width": 61,
+    "height": 27,
     "pixelRatio": 1
   },
   "rice": {
-    "x": 839,
-    "y": 352,
-    "width": 80,
-    "height": 46,
+    "x": 843,
+    "y": 356,
+    "width": 72,
+    "height": 38,
     "pixelRatio": 1
   },
   "land-subject-to-inundation": {
-    "x": 948,
-    "y": 352,
-    "width": 80,
-    "height": 45,
+    "x": 952,
+    "y": 356,
+    "width": 72,
+    "height": 37,
     "pixelRatio": 1
   },
   "bog-marsh": {
-    "x": 1057,
-    "y": 352,
-    "width": 79,
-    "height": 45,
+    "x": 1061,
+    "y": 356,
+    "width": 71,
+    "height": 37,
     "pixelRatio": 1
   },
   "bog-marsh-border": {
@@ -826,115 +896,115 @@
     "pixelRatio": 1
   },
   "swamp-other": {
-    "x": 1259,
-    "y": 352,
-    "width": 80,
-    "height": 45,
+    "x": 1263,
+    "y": 356,
+    "width": 72,
+    "height": 37,
     "pixelRatio": 1
   },
   "swamp-nipa-palm": {
-    "x": 1368,
-    "y": 352,
-    "width": 79,
-    "height": 45,
+    "x": 1372,
+    "y": 356,
+    "width": 71,
+    "height": 37,
     "pixelRatio": 1
   },
   "swamp-mangrove": {
-    "x": 1477,
-    "y": 352,
-    "width": 79,
-    "height": 45,
+    "x": 1481,
+    "y": 356,
+    "width": 71,
+    "height": 37,
     "pixelRatio": 1
   },
   "forest-deciduous": {
-    "x": 2005,
-    "y": 352,
-    "width": 80,
-    "height": 45,
+    "x": 2009,
+    "y": 356,
+    "width": 72,
+    "height": 37,
     "pixelRatio": 1
   },
   "forest-evergreen": {
-    "x": 2115,
-    "y": 352,
-    "width": 80,
-    "height": 45,
+    "x": 2119,
+    "y": 356,
+    "width": 72,
+    "height": 37,
     "pixelRatio": 1
   },
   "forest-mixed": {
-    "x": 2225,
-    "y": 352,
-    "width": 80,
-    "height": 45,
+    "x": 2229,
+    "y": 356,
+    "width": 72,
+    "height": 37,
     "pixelRatio": 1
   },
   "forest-unknown": {
-    "x": 2334,
-    "y": 352,
-    "width": 81,
-    "height": 45,
+    "x": 2338,
+    "y": 356,
+    "width": 73,
+    "height": 37,
     "pixelRatio": 1
   },
   "forest-scattered": {
-    "x": 33,
-    "y": 438,
-    "width": 117,
-    "height": 56,
+    "x": 37,
+    "y": 442,
+    "width": 109,
+    "height": 48,
     "pixelRatio": 1
   },
   "forest-brush/thicket": {
-    "x": 179,
-    "y": 443,
-    "width": 81,
-    "height": 46,
+    "x": 183,
+    "y": 447,
+    "width": 73,
+    "height": 38,
     "pixelRatio": 1
   },
   "vineyard": {
-    "x": 289,
-    "y": 440,
-    "width": 79,
-    "height": 51,
+    "x": 293,
+    "y": 444,
+    "width": 71,
+    "height": 43,
     "pixelRatio": 1
   },
   "cane": {
-    "x": 398,
-    "y": 427,
-    "width": 114,
-    "height": 77,
+    "x": 402,
+    "y": 431,
+    "width": 106,
+    "height": 69,
     "pixelRatio": 1
   },
   "grassland-tropical": {
-    "x": 542,
-    "y": 441,
-    "width": 117,
-    "height": 49,
+    "x": 546,
+    "y": 445,
+    "width": 109,
+    "height": 41,
     "pixelRatio": 1
   },
   "orchard-cropland": {
-    "x": 688,
-    "y": 442,
-    "width": 94,
-    "height": 47,
+    "x": 692,
+    "y": 446,
+    "width": 86,
+    "height": 39,
     "pixelRatio": 1
   },
   "orchard-other": {
-    "x": 810,
-    "y": 442,
-    "width": 87,
-    "height": 47,
+    "x": 814,
+    "y": 446,
+    "width": 79,
+    "height": 39,
     "pixelRatio": 1
   },
   "orchard-permanent-irrigation": {
-    "x": 925,
-    "y": 442,
-    "width": 87,
-    "height": 47,
+    "x": 929,
+    "y": 446,
+    "width": 79,
+    "height": 39,
     "pixelRatio": 1
   },
   "trees-row": {
-    "x": 1041,
-    "y": 463,
-    "width": 6,
-    "height": 5,
+    "x": 1045,
+    "y": 467,
+    "width": -2,
+    "height": -3,
     "pixelRatio": 1
   },
   "hedgerow": {
@@ -1033,13 +1103,6 @@
     "y": 534,
     "width": 79,
     "height": 45,
-    "pixelRatio": 1
-  },
-  "ditch-dry": {
-    "x": 1110,
-    "y": 556,
-    "width": 64,
-    "height": 1,
     "pixelRatio": 1
   },
   "ditch-perennial": {

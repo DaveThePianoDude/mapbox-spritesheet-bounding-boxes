@@ -19,6 +19,8 @@ objectsFound = []
 sortedObjectsFound = []
 boundingBoxes = []
 
+shrinkSet = [127,128, 132,133,134,135,137,138,139,146,147,148,149,150,151,152,153,154,155,156,157,158,173,174,175]
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -68,6 +70,11 @@ class Icon:
         self.height = self.height - amt * 2
 
         return self
+
+def shrinkMe(index):
+    if index in shrinkSet:
+        return True
+    return False
 
 #returns true if the pixel at (x,y) is black.
 def interrogate(x,y,color):
@@ -215,12 +222,12 @@ def main():
 
         totalLen = len(boundingBoxes)
 
-        index = 0
+        index = 1
 
         while(len(boundingBoxes) > 0):
             boundingBox = boundingBoxes.pop()
 
-            if ((iter == 2) and (index >= 77) and (index < 89)):
+            if ((iter == 2) and shrinkMe(index)):
                 print ("Shrinking item " + str(index))
                 print (boundingBox)
                 boungingBox = boundingBox.shrink(4);
