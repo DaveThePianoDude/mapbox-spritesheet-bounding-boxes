@@ -15,18 +15,37 @@ def parseCsv(csvFile):
         for row in csvreader:
             csvRows.append(row)
 
+def lookupIndex(iconNumber):
+    index = 0
+    for row in csvRows:
+        if row[1] == iconNumber:
+            return index
+        index += 1;
+    return -1; # return -1 if not found
+
 # key is a base-1 integer but csv rows are base-0.  Subtract 1 to get the correct value.
 def lookupNameValue(key):
-    key -= 1
+    #key -= 1
     mappedValue = csvRows[key][0]
-    
+
     return mappedValue
 
 def map(inputFile, outputFile):
+    totalCount = 0
     with open(inputFile, 'r') as file:
         jsonData = json.loads(file.read())
+        # generate a new set of data using new keys:
         for key in jsonData:
-            transformedJsonObject[lookupNameValue(int(key[5:]))] = jsonData[key]
+            # get the number in the auto-generated icon id (e.g. "icon-1")
+            iconNumber = key[5:]
+            #print(iconNumber)
+            # use that to get the index into array 'csvRows'
+            index = lookupIndex(iconNumber)
+            if (index > 0):
+                transformedJsonObject[lookupNameValue(index)] = jsonData[key]
+                totalCount += 1
+    print("Total count of sprite json entries created: " + str(totalCount))
+
     with open(outputFile, 'w') as file:
         json.dump(transformedJsonObject, file, indent=2)
 
