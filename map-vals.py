@@ -16,7 +16,7 @@ def parseCsv(csvFile):
             csvRows.append(row)
 
 def lookupIndex(iconNumber):
-    index = 0
+    index = 0cd
     for row in csvRows:
         if row[1] == iconNumber:
             return index

@@ -343,10 +343,10 @@
 	"pixelRatio": 1
 },
 "icon-50": {
-	"x": 2144,
-	"y": 110,
-	"width": 48,
-	"height": 23,
+	"x": 2148,
+	"y": 114,
+	"width": 40,
+	"height": 15,
 	"pixelRatio": 1
 },
 "icon-51": {
@@ -811,7 +811,7 @@
 	"height": 7,
 	"pixelRatio": 1
 },
-"icon-117": {
+"intact-runway": {
 	"x": 2219,
 	"y": 287,
 	"width": 64,
