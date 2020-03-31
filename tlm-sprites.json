@@ -181,6 +181,13 @@
     "height": 17,
     "pixelRatio": 1
   },
+  "building-police": {
+    "x": 914,
+    "y": 114,
+    "width": 15,
+    "height": 16,
+    "pixelRatio": 1
+  },
   "building-prison": {
     "x": 959,
     "y": 102,
@@ -713,6 +720,13 @@
     "height": 42,
     "pixelRatio": 1
   },
+  "vertical-obstruction-single": {
+    "x": 1233,
+    "y": 273,
+    "width": 33,
+    "height": 42,
+    "pixelRatio": 1
+  },
   "vertical-obstruction-group": {
     "x": 1296,
     "y": 273,
@@ -797,11 +811,25 @@
     "height": 2,
     "pixelRatio": 1
   },
-  "ditch-dry": {
-    "x": 1110,
-    "y": 556,
+  "ditch-perennial": {
+    "x": 1204,
+    "y": 555,
     "width": 64,
-    "height": 1,
+    "height": 3,
+    "pixelRatio": 1
+  },
+  "aqueduct-line": {
+    "x": 177,
+    "y": 374,
+    "width": 64,
+    "height": 2,
+    "pixelRatio": 1
+  },
+  "ditch-intermittent-dry": {
+    "x": 177,
+    "y": 374,
+    "width": 64,
+    "height": 2,
     "pixelRatio": 1
   },
   "river-disappearing": {
@@ -825,32 +853,67 @@
     "height": 9,
     "pixelRatio": 1
   },
-  "water-well-dry": {
+  "natural-pool-perennial": {
+    "x": 360,
+    "y": 370,
+    "width": 9,
+    "height": 9,
+    "pixelRatio": 1
+  },
+  "natural-pool-intermittent-dry": {
     "x": 399,
     "y": 369,
     "width": 11,
     "height": 11,
     "pixelRatio": 1
   },
-  "inland-waterbody-perennial-water": {
+  "water-well-intermittent-dry": {
+    "x": 399,
+    "y": 369,
+    "width": 11,
+    "height": 11,
+    "pixelRatio": 1
+  },
+  "river-25m-wide-or-more-perennial": {
     "x": 444,
     "y": 367,
     "width": 27,
     "height": 15,
     "pixelRatio": 1
   },
-  "inland-waterbody-intermittent-dry-water": {
+  "inland-waterbody-perennial": {
+    "x": 444,
+    "y": 367,
+    "width": 27,
+    "height": 15,
+    "pixelRatio": 1
+  },
+  "inland-waterbody-intermittent-dry": {
     "x": 508,
     "y": 367,
     "width": 27,
     "height": 15,
     "pixelRatio": 1
   },
-  "river-25m-wide-less-dry": {
+  "river-25m-wide-or-more-intermittent-dry": {
+    "x": 508,
+    "y": 367,
+    "width": 27,
+    "height": 15,
+    "pixelRatio": 1
+  },
+  "river-25m-wide-less-intermittent-dry": {
     "x": 568,
     "y": 374,
     "width": 64,
     "height": 2,
+    "pixelRatio": 1
+  },
+  "qanat-shaft": {
+    "x": 662,
+    "y": 369,
+    "width": 11,
+    "height": 11,
     "pixelRatio": 1
   },
   "cistern": {
@@ -1105,11 +1168,11 @@
     "height": 45,
     "pixelRatio": 1
   },
-  "ditch-perennial": {
-    "x": 1204,
-    "y": 555,
+  "ditch-dry": {
+    "x": 1110,
+    "y": 556,
     "width": 64,
-    "height": 3,
+    "height": 1,
     "pixelRatio": 1
   },
   "ice-cliff": {
