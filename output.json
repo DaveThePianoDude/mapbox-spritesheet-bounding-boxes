@@ -1,16 +1,16 @@
 {
 "icon-1": {
-	"x": 384,
-	"y": 26,
-	"width": 82,
-	"height": 36,
+	"x": 388,
+	"y": 30,
+	"width": 74,
+	"height": 28,
 	"pixelRatio": 1
 },
 "icon-2": {
-	"x": 502,
-	"y": 41,
-	"width": 118,
-	"height": 6,
+	"x": 498,
+	"y": 37,
+	"width": 126,
+	"height": 14,
 	"pixelRatio": 1
 },
 "icon-3": {

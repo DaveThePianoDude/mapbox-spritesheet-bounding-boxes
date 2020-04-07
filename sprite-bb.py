@@ -19,7 +19,7 @@ objectsFound = []
 sortedObjectsFound = []
 boundingBoxes = []
 
-shrinkSet = [2, 50, 127,128, 132,133,134,135,137,138,139,146,147,148,149,150,151,152,153,154,155,156,157,158,173,174,175]
+shrinkSet = [1, 50, 127,128, 132,133,134,135,137,138,139,146,147,148,149,150,151,152,153,154,155,156,157,158,173,174,175]
 
 class Point:
     def __init__(self, x, y):
@@ -165,6 +165,8 @@ def convertClusters(sortedObjectsFound,height, width):
 # Save image in set directory
 # Read bgr image
 def main():
+    print("Running local version...")
+
     parser = argparse.ArgumentParser()
     parser.add_argument('inputFile')
     parser.add_argument('outputFile')
