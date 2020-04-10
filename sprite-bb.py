@@ -19,7 +19,7 @@ objectsFound = []
 sortedObjectsFound = []
 boundingBoxes = []
 
-shrinkSet = [1, 50, 127,128, 132,133,134,135,137,138,139,146,147,148,149,150,151,152,153,154,155,156,157,158,173,174,175]
+shrinkSet = [1, 50, 127,128, 132,133,134,135,137,138,139,146,147,148,149,150,151,152,153,154,155,156,157,158,173,174,175,176,177,178,179,180,181,185,192]
 
 class Point:
     def __init__(self, x, y):
@@ -232,7 +232,7 @@ def main():
             if ((iter == 2) and shrinkMe(index)):
                 print ("Shrinking item " + str(index))
                 print (boundingBox)
-                boungingBox = boundingBox.shrink(4);
+                boungingBox = boundingBox.shrink(3);
                 print (boundingBox)
 
             #Step 3: Set the bounding box color, per iteration.
