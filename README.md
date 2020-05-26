@@ -1,3 +1,9 @@
+May 26, 2020
+
+This branch of the project includes the NOME sprite resources.  Please note following changes:
+
+1. The file tlm-master-sprites.png was renamed to vtms-master-spritessheet.png
+
 February 18, 2020
 
 David A. Holland
@@ -27,4 +33,3 @@ export QT_X11_NO_MITSHM=1
 This avoids strange hardware errors such as "BadDrawable (invalid Pixmap or Window parameter)."
 
 The iteration parameter has a value of 1 or 2 and specifies the first pass or the second pass.
-
