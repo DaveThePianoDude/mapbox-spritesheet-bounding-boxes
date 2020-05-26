@@ -3,6 +3,9 @@ May 26, 2020
 This branch of the project includes the NOME sprite resources.  Please note following changes:
 
 1. The file tlm-master-sprites.png was renamed to vtms-master-spritessheet.png
+2. The vtms-master-spritesheet dimensions were enlarged to 3100 by 600 pixels.
+3. The NOME spritesheet was copied into the lower-left corner of the sheet.
+
 
 February 18, 2020
 
