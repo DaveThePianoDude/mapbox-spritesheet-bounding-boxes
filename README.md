@@ -6,6 +6,12 @@ This branch of the project includes the NOME sprite resources.  Please note foll
 2. The vtms-master-spritesheet dimensions were enlarged to 3100 by 600 pixels.
 3. The NOME spritesheet was copied into the lower-left corner of the sheet.
 
+December 19, 2020
+
+WARNING:  Code is JANKY!  Read this document first!!!
+
+This code was written for a very narrow use case, with particular (or peculiar?) spacing required between sprites in the
+sprite map in order for it to work.  It can be improved.
 
 February 18, 2020
 
@@ -19,20 +25,30 @@ Usage:
 
 ./sprite-bb.py <inputFile> <outputFile> <iteration>
 
-e.g., ./sprite-bb.py tlm_master_legend_spritemap_2.png output.json 1
+e.g., First you do a:
 
-The program displays the result of the recursive search.  To dismiss the display, click on the image and press any key.
+ ./sprite-bb.py vtms-master-spritesheet.png output.json 1
 
-The program can be run twice, effectively running recursive search on the bounding boxes them selves, after the first pass iteration.  This will generate a set of new bounding boxes in the cases where no single box was found for an icon.  In these cases, you will have multiple, possibly over-lapping bounding boxes that can be consolidates by running the script in a second pass.  
+ THEN...
 
-Follow the steps in the comments to set up the first vs. second iteration logic.
+ ./sprite-bb.py vtms-master-spritesheet.png output.json 2
 
-NOTE:
+That first pass will write an intermediate file that begins with 'v-blue'.  You can delete this when you're done. :)
 
-On some systems you may need to issue this command at the terminal command line: or, better yet, to your .bashrc file.
+The program displays an image showing the result of the recursive search.  To dismiss the display, CLICK ON THE
+IMAGE AND PRESS ANY KEY (LINUX OS).
 
-export QT_X11_NO_MITSHM=1
+You run the program twice, effectively running recursive search on the bounding boxes themselves after the first pass iteration.  The first pass generates a set of new bounding boxes in the cases where no single box was found for an icon.  In these cases, you will have multiple, possibly over-lapping bounding boxes that can be consolidates by running the script in a second pass.  
 
-This avoids strange hardware errors such as "BadDrawable (invalid Pixmap or Window parameter)."
 
-The iteration parameter has a value of 1 or 2 and specifies the first pass or the second pass.
+KNOWN ISSUES:
+
+1. On some systems you may need to issue this command at the terminal command line: or, better yet, to your .bashrc file.
+
+  export QT_X11_NO_MITSHM=1
+
+  This avoids strange hardware errors such as "BadDrawable (invalid Pixmap or Window parameter)."
+
+2. You may get a core dump if the boxes resulting from the first pass overlap too much across individual icons.  This
+
+  code does not work well on icons spaced too closely together!
