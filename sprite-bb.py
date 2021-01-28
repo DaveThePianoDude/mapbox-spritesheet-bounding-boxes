@@ -1,24 +1,25 @@
 #!/usr/bin/python3
 
-# importing OpenCV(cv2) module
+# Importing OpenCV (cv2) module...
 import cv2
 import numpy as matrix
 import sys
 import argparse
 
-# the setrecursionlimit function is
+# The setrecursionlimit function is
 # used to modify the default recursion
 # limit set by python. Using this,
 # we can increase the recursion limit
-# to satisfy our needs
+# to satisfy our needs...
+sys.setrecursionlimit(10**6)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
-sys.setrecursionlimit(10**6)
 
 objectsFound = []
 sortedObjectsFound = []
 boundingBoxes = []
 
+# The 'Shrink Set' is the set of sprites that should be shrunk (ones that have borders).
 shrinkSet = [1, 50, 127,128, 132,133,134,135,137,138,139,146,147,148,149,150,151,152,153,154,155,156,157,158,173,174,175,176,177,178,179,180,181,185,192]
 
 class Point:
@@ -41,7 +42,7 @@ class Icon:
     def __repr__(self):
         return "<Icon x:%s y:%s w:%s h:%s>" % (self.x, self.y, self.width, self.height)
 
-    # Returns a number between 0 and n (non-inclusive) where n is the number of rows of icons in the sprite sheet.
+    # Returns a number from 0 to n-1, where n is the number of rows of icons in the sprite sheet.
     def getTier(self):
         avgY = (self.y + (self.y+self.height)) / 2
 
@@ -76,14 +77,14 @@ def shrinkMe(index):
         return True
     return False
 
-#returns true if the pixel at (x,y) is black.
+# Returns true if the pixel at (x,y) is black.
 def interrogate(x,y,color):
     _blue = img[y,x,0]
     _green = img[y,x,1]
     _red = img[y,x,2]
 
-    # Step 2: Set the interrogate function, depending on if we are doing the initial organic clustering of icon points
-    # or the clustering of bounding boxes found during the first iteration.
+    # Step 2: Set the interrogate function, depending on whether this is the initial, organic clustering of
+    # icon points, or the clustering of bounding boxes found during the first iteration.
     if (iter == 1):
         return (_red < color[2] and _green < color[1] and _blue < color[0] and scanned[x,y] < 1)
     else:
@@ -111,14 +112,14 @@ def growClusters(height, width, color):
             objectsFound.append(icon)
             #print(icon.getRank())
 
-#returns true if A completely contains B
+# Returns true if bounding box A completely contains bounding box B.
 def contains(A, B):
     if ((B.x > A.x) and (B.x + B.width) < (A.x + A.width) and (B.y > A.y) and (B.y + B.height < A.y + A.height)):
         return True
     else:
         return False
 
-#returns true if some box A in boundingBoxes contains another box B
+# Returns true if some box A in set boundingBoxes contains another box B
 def containsAny(A):
     index=0
     for B in boundingBoxes:
@@ -129,7 +130,7 @@ def containsAny(A):
         index +=1
     return False
 
-# convert the objects (clusters of points) found into bounding boxes
+# Converts the objects (clusters of points) found into bounding boxes.
 def convertClusters(sortedObjectsFound,height, width):
     print ("Found " + str(len(sortedObjectsFound)) + " bounding boxes.")
 
@@ -208,7 +209,7 @@ def main():
 
         foundContainedBox = True
 
-        #improve the quality of the object detection by removing boxes contained in other boxes
+        # Improves the quality of the object detection by removing boxes contained in other boxes.
         while (foundContainedBox):
             foundContainedBox = False
             for boundingBox in boundingBoxes:
@@ -216,7 +217,7 @@ def main():
                     boundingBoxes.remove(boundingBox)
                     foundContainedBox = True
 
-        # write the output file and markup the image for display
+        # Writes the output file and markup the image for display
         file = open(args.outputFile,"w")
         file.write("{\n")
 
@@ -235,7 +236,7 @@ def main():
                 boungingBox = boundingBox.shrink(3);
                 print (boundingBox)
 
-            #Step 3: Set the bounding box color, per iteration.
+            # Step 3: Set the bounding box color, per iteration.
             if (iter == 1):
                 cv2.rectangle(img, (boundingBox.x,boundingBox.y), (boundingBox.x+boundingBox.width,boundingBox.y+boundingBox.height), (255, 0, 0), 1)
             else:
@@ -276,14 +277,14 @@ def main():
         height = int(img.shape[0] * scale_percent / 100)
         dim = (width, height)
 
-        # resize image
+        # Resize image
         resized = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
 
-        # Output img with window name as 'image'
+        # Output img with window name as 'image'.
         cv2.imshow('image', resized)
         cv2.waitKey(0)
 
-        # Destroying present windows on screen
+        # Destroy any lingering windows.
         cv2.destroyAllWindows()
 
 if __name__ == '__main__':
