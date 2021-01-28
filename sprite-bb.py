@@ -187,6 +187,7 @@ def main():
             img = cv2.imread(args.inputFile)
         else:
             print ("Performing iteration 2...")
+            # We meed the original image in order to clip out the tiles.
             origImg = cv2.imread(args.inputFile)
             img = cv2.imread("v-blue-"+args.inputFile)
 
