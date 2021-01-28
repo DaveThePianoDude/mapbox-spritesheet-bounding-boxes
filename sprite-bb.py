@@ -2,6 +2,7 @@
 
 # Importing OpenCV (cv2) module...
 import cv2
+import os
 import numpy as matrix
 import sys
 import argparse
@@ -186,6 +187,7 @@ def main():
             img = cv2.imread(args.inputFile)
         else:
             print ("Performing iteration 2...")
+            origImg = cv2.imread(args.inputFile)
             img = cv2.imread("v-blue-"+args.inputFile)
 
         global height, width
@@ -247,13 +249,21 @@ def main():
             color = (20, 20, 20)
             thickness = 1
 
-            name = str(totalLen - len(boundingBoxes))
+            numericLabel = str(totalLen - len(boundingBoxes))
 
-            # Step 4: Render text only after second iteration.
+            # Step 4: Perform processing specific to iteration #2
             if (iter == 2):
-                img = cv2.putText(img, name, org, font, fontScale, color, thickness, cv2.LINE_AA)
+                # Render text only after second iteration.
+                img = cv2.putText(img, numericLabel, org, font, fontScale, color, thickness, cv2.LINE_AA)
+                # Snip this sprite from the sprite sheet using the bounding box, and put it in folder sprite-tiles.
+                try:
+                    cropImg = origImg[boundingBox.y:boundingBox.y+boundingBox.height, boundingBox.x:boundingBox.x+boundingBox.width]
+                    print('Writing sprite tile' + "image-"+numericLabel)
+                    cv2.imwrite(os.path.join("./sprite-tiles" , "image-"+numericLabel+".png"), cropImg)
+                except:
+                    print("Error: Could not write image " + numericLabel + ".  Probably because it doesn't exist.")
 
-            file.write("\""+"icon-"+name+"\": {\n")
+            file.write("\""+"icon-"+numericLabel+"\": {\n")
             file.write("\t\"x\": "+str(boundingBox.x)+",\n")
             file.write("\t\"y\": "+str(boundingBox.y)+",\n")
             file.write("\t\"width\": "+str(boundingBox.width)+",\n")
@@ -270,7 +280,7 @@ def main():
         file.write("}\n")
         file.close()
 
-        cv2.imwrite("v-blue-"+args.inputFile, img)
+        cv2.imwrite("v-blue-" + args.inputFile, img)
 
         scale_percent = 90 # percent of original size
         width = int(img.shape[1] * scale_percent / 100)
