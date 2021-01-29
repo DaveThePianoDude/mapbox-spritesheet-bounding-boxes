@@ -260,7 +260,7 @@ def main():
                 try:
                     cropImg = origImg[boundingBox.y:boundingBox.y+boundingBox.height, boundingBox.x:boundingBox.x+boundingBox.width]
                     print('Writing sprite tile' + "image-"+numericLabel)
-                    cv2.imwrite(os.path.join("./sprite-tiles" , "image-"+numericLabel+".png"), cropImg)
+                    cv2.imwrite(os.path.join("./sprite-tiles" , "image-"+numericLabel+".bmp"), cropImg)
                 except:
                     print("Error: Could not write image " + numericLabel + ".  Probably because it doesn't exist.")
 
